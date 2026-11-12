@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agendas Navideñas Redyz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Mundo único: perla holográfica + cromo (estilo soft holo). Secciones apiladas en grillas que pasan a 1 columna en móvil. */
+  --perla:#FCFBFE;
+  --perla-2:#ECE7F7;
+  --tinta:#3B3355;
+  --tinta-2:#5B5474;
+  --violeta:#9A88DC;
+  --linea:rgba(29,24,48,.12);
+  --holo:linear-gradient(115deg,#FDE8F2 0%,#EFE8FD 26%,#E0F7F6 52%,#FFF8EC 74%,#F5EBFD 100%);
+  --holo-osc:linear-gradient(100deg,#E08EBD 0%,#A895E6 38%,#62C2BE 72%,#E08EBD 100%);
+  --boton:linear-gradient(135deg,#F3EEFF 0%,#FDEDF5 55%,#E9F9F8 100%);
+  --cromo:linear-gradient(180deg,#ffffff 0%,#dcd8ea 34%,#8d87a6 50%,#efecf8 64%,#ffffff 100%);
+  --cromo-osc:linear-gradient(180deg,#8d87a6 0%,#e4e0f2 28%,#6a6485 50%,#cfc9e3 70%,#7d7798 100%);
+  --cromo-claro:linear-gradient(160deg,#ffffff 0%,#e7e2f4 30%,#bdb6d4 50%,#f4f1fb 70%,#ffffff 100%);
+  --vidrio:rgba(255,255,255,.66);
+  --f-display:'Unbounded',system-ui,sans-serif;
+  --f-body:'Manrope',system-ui,sans-serif;
+  --f-serif:'Manrope',system-ui,sans-serif;
+  --r:26px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--perla);color:var(--tinta);font-family:var(--f-body);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--violeta);outline-offset:3px;border-radius:8px}
+h1,h2,h3{text-wrap:balance;margin:0}
+p{margin:0}
+
+/* nieve */
+#nieve{position:fixed;inset:0;pointer-events:none;z-index:2;overflow:hidden}
+.copo{position:absolute;top:-24px;color:#fff;text-shadow:0 0 4px #c9b6f2,0 0 10px #bff0ee;animation:caer linear infinite;opacity:.95}
+@keyframes caer{to{transform:translateY(110vh) rotate(360deg)}}
+.gorro-abs{position:absolute;pointer-events:none}
+.d-av{position:relative}
+.d-gorro{position:absolute;width:44px;height:38px;top:-20px;right:-12px;transform:rotate(18deg)}
+.d-perfil .d-gorro{width:34px;height:30px;top:-16px;right:-10px}
+/* adviento */
+.adviento{margin-top:18px;display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;padding:24px 28px;border-radius:var(--r);background:linear-gradient(165deg,rgba(255,255,255,.85),rgba(255,255,255,.5)),var(--holo);box-shadow:inset 0 0 0 2px #fff,0 16px 36px rgba(149,114,234,.14)}
+.adviento svg{width:150px;height:auto}
+.adviento .pronto{display:inline-block;padding:5px 12px;border-radius:999px;background:#fff;color:var(--violeta);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;box-shadow:inset 0 0 0 1.5px #E6DEFA}
+.adviento h3{font-family:var(--f-display);font-weight:700;font-size:clamp(20px,2.6vw,28px);line-height:1.15;margin:10px 0 6px}
+.adviento p{color:var(--tinta-2)}
+.arbol-cierre{position:absolute;width:150px;bottom:-6px;opacity:.95}
+.arbol-cierre.izq{left:14px}.arbol-cierre.der{right:14px;width:110px}
+/* firma */
+.firma{font-family:var(--f-serif);font-weight:300;font-size:13px;letter-spacing:.08em;color:var(--tinta-2)}
+.firma b{font-weight:600;color:var(--violeta)}
+.marca-col{display:grid;gap:0}
+/* página encuesta */
+[hidden]{display:none!important}
+.volver-l{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;font-size:14px;padding:10px 16px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1.5px #E6DEFA}
+.e-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;padding-top:20px}
+.e-hero h1{font-family:var(--f-display);font-weight:800;font-size:clamp(34px,5.4vw,62px);line-height:1.04;letter-spacing:-.02em;margin:12px 0 16px}
+.e-precio{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;align-items:center}
+.e-precio .grande{font-family:var(--f-display);font-weight:800;font-size:clamp(34px,4.6vw,48px)}
+.chip-p{display:inline-block;padding:7px 13px;border-radius:999px;background:#fff;font-size:13px;font-weight:800;box-shadow:inset 0 0 0 1.5px #E6DEFA}
+.chip-p.holo{background:var(--holo);box-shadow:inset 0 0 0 1.5px #fff}
+.linea-tiempo{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;position:relative}
+.linea-tiempo::before{content:"";position:absolute;left:8%;right:8%;top:30px;height:4px;border-radius:4px;background:var(--holo);box-shadow:0 0 0 1px #fff}
+.linea-tiempo li{position:relative;display:grid;gap:8px;justify-items:center;text-align:center}
+.linea-tiempo .orb{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 32% 28%,#fff 0%,#f1ecfb 40%,#cfc6ea 85%);box-shadow:inset 6px 6px 14px #fff,0 10px 22px rgba(149,114,234,.18);font-size:26px}
+.linea-tiempo b{font-family:var(--f-display);font-size:15px}
+.linea-tiempo span{font-size:13.5px;color:var(--tinta-2);max-width:24ch}
+.e-demo{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:start}
+.tema-sw{display:inline-flex;padding:4px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1.5px #E6DEFA;gap:4px}
+.tema-sw button{border:0;border-radius:999px;padding:9px 14px;font-weight:800;font-size:13px;background:transparent}
+.tema-sw button.on{background:var(--holo);box-shadow:inset 0 0 0 1.5px #B4A6E8}
+/* encuesta dentro del teléfono */
+.e-scroll{height:100%;overflow-y:auto;padding:54px 14px 22px;scrollbar-width:none;position:relative}
+.e-scroll::-webkit-scrollbar{display:none}
+.pantalla.navidad{background:linear-gradient(180deg,#FFF3F8 0%,#FBF9FF 40%,#F2FBFA 100%)}
+.pantalla.marca{background:#FCFBFE}
+.e-cab{text-align:center;padding:16px 12px;border-radius:22px;position:relative;overflow:hidden}
+.navidad .e-cab{background:linear-gradient(170deg,rgba(255,255,255,.65),rgba(255,255,255,.3)),linear-gradient(120deg,#fbd3e9,#ffe1e9 40%,#d9f5f3);box-shadow:inset 0 0 0 1px #fff}
+.marca .e-cab{background:#F1ECFB;box-shadow:inset 0 0 0 1px #e2dbf3}
+.e-cab .d-logo{font-size:20px}
+.e-tit{font-family:var(--f-display);font-weight:800;font-size:21px;line-height:1.1;margin:8px 0 6px}
+.e-q{background:#fff;border-radius:18px;padding:12px;box-shadow:inset 0 0 0 1px var(--linea);margin-top:10px}
+.e-q h4{margin:0 0 2px;font-family:var(--f-display);font-size:13px;font-weight:700}
+.e-q p{font-size:11px;color:var(--tinta-2);margin-bottom:8px}
+.e-stars{display:flex;gap:4px}
+.e-stars button{border:0;background:none;font-size:24px;line-height:1;color:#e2dcef;padding:0 1px}
+.e-stars button.on{color:#F2A6C9;text-shadow:0 0 6px rgba(242,166,201,.6)}
+.marca .e-stars button.on{color:#B4A6E8;text-shadow:none}
+.e-asp{display:flex;justify-content:space-between;align-items:center;gap:6px;padding:6px 0;border-bottom:1px solid var(--linea);font-size:11.5px;font-weight:700}
+.e-asp:last-child{border-bottom:0}
+.e-asp .e-stars button{font-size:17px}
+.e-nps{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}
+.e-nps button{border:0;border-radius:9px;padding:7px 0;font-size:12px;font-weight:800;background:var(--perla);box-shadow:inset 0 0 0 1px var(--linea)}
+.e-nps button.sel{background:var(--holo);box-shadow:inset 0 0 0 2px #B4A6E8}
+.e-area{width:100%;border:0;border-radius:12px;padding:10px;font:inherit;font-size:12.5px;background:var(--perla);box-shadow:inset 0 0 0 1px var(--linea);resize:none;color:var(--tinta)}
+.e-gorro{position:absolute;width:46px;height:40px;left:8px;top:6px;transform:rotate(-16deg)}
+.e-arbol{position:absolute;width:44px;height:56px;right:8px;bottom:4px}
+.marca .solo-navidad{display:none}
+.e-gracias{text-align:center;padding:34px 8px}
+.e-gracias .e-tit{font-size:26px}
+/* tablero resultados */
+.tablero{width:100%;border-radius:30px;padding:22px;background:var(--vidrio);backdrop-filter:blur(10px);box-shadow:inset 0 0 0 1px #fff,0 20px 44px rgba(149,114,234,.12)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.kpi{background:#fff;border-radius:18px;padding:14px;box-shadow:inset 0 0 0 1px var(--linea)}
+.kpi small{display:block;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-2)}
+.kpi b{display:block;font-family:var(--f-display);font-size:28px;font-variant-numeric:tabular-nums;margin-top:4px}
+.kpi span{font-size:12px;color:var(--tinta-2)}
+.barras{display:grid;gap:9px;margin-top:6px}
+.barra{display:grid;grid-template-columns:150px 1fr 40px;gap:10px;align-items:center;font-size:13px;font-weight:700}
+.barra .pista{height:12px;border-radius:12px;background:#ece7f7;overflow:hidden}
+.barra .pista i{display:block;height:100%;border-radius:12px;background:var(--holo-osc)}
+.barra em{font-style:normal;font-variant-numeric:tabular-nums;text-align:right}
+.comentarios{display:grid;gap:8px;margin-top:6px}
+.coment{background:#fff;border-radius:16px;padding:12px 14px;box-shadow:inset 0 0 0 1px var(--linea);font-size:14px}
+.coment .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12px;color:var(--tinta-2);margin-bottom:4px}
+.coment .meta b{color:var(--tinta)}
+.coment .estr{color:#F2A6C9;letter-spacing:1px}
+.coment.nuevo{box-shadow:inset 0 0 0 2px #B4A6E8}
+.tag{display:inline-block;border-radius:999px;padding:2px 9px;font-size:11px;font-weight:800;background:#EEF9F4;color:#2f8a63}
+.tag.neu{background:#FFF5E3;color:#a36a12}.tag.det{background:#F6E6F0;color:#a0336f}
+/* fondo */
+.fondo{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.fondo i{position:absolute;border-radius:50%;filter:blur(80px);opacity:.28}
+.fondo i:nth-child(1){width:520px;height:520px;left:-140px;top:-120px;background:#f7cbe4}
+.fondo i:nth-child(2){width:480px;height:480px;right:-160px;top:120px;background:#c8f1ef}
+.fondo i:nth-child(3){width:560px;height:560px;left:30%;top:58%;background:#ddd0fb}
+.grano{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.18;background-image:radial-gradient(rgba(29,24,48,.08) 1px,transparent 1px);background-size:3px 3px}
+main,header,footer{position:relative;z-index:1}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(28px,6vw,72px)}
+
+/* tipografía */
+.serif-caps{font-family:var(--f-serif);text-transform:uppercase;letter-spacing:.26em;font-weight:300;font-size:13px;color:var(--tinta-2)}
+.holo-txt{background:var(--holo-osc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cromo-txt{background:var(--cromo-osc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.h2{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,4.6vw,46px);line-height:1.08;letter-spacing:-.01em}
+.lead{font-size:18px;color:var(--tinta-2);max-width:60ch}
+.sec{padding-top:84px}
+.sec-head{display:grid;gap:12px;margin-bottom:34px}
+
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:20px;padding-bottom:20px}
+.marca{display:flex;align-items:baseline;gap:12px;text-decoration:none}
+.marca b{font-family:var(--f-display);font-weight:800;font-size:26px;letter-spacing:.04em}
+.marca span{font-family:var(--f-serif);font-weight:300;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--tinta-2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 24px;border-radius:999px;font-weight:800;font-size:15px;text-decoration:none;border:0;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-osc{background:var(--boton);color:var(--tinta);box-shadow:inset 0 0 0 2px #fff,0 0 0 1px rgba(149,114,234,.35),0 14px 30px rgba(149,114,234,.22)}
+.btn-holo{background:var(--holo);color:var(--tinta);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.9),0 12px 26px rgba(110,69,217,.18)}
+.btn-sm{padding:11px 18px;font-size:14px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;padding-top:30px;padding-bottom:10px}
+.hero h1{font-family:var(--f-display);font-weight:800;font-size:clamp(38px,6.2vw,72px);line-height:1.02;letter-spacing:-.02em;margin:14px 0 18px}
+.hero .lead{margin-bottom:26px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.sello{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:10px 16px 10px 10px;border-radius:999px;background:var(--vidrio);backdrop-filter:blur(8px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.9),0 8px 22px rgba(29,24,48,.08);font-weight:700;font-size:14px}
+.sello em{font-style:normal;background:var(--holo);border-radius:999px;padding:5px 10px;font-weight:800}
+.hero-arte{position:relative;aspect-ratio:1/1;max-width:540px;width:100%;justify-self:center}
+.hero-arte svg{width:100%;height:100%;overflow:visible}
+.flota{animation:flota 7s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.flota.b{animation-duration:9s;animation-delay:-2s}
+.flota.c{animation-duration:6s;animation-delay:-4s}
+@keyframes flota{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(3deg)}}
+.gira{animation:gira 18s linear infinite;transform-box:fill-box;transform-origin:center}
+@keyframes gira{to{transform:rotate(360deg)}}
+
+/* servicios */
+.servicios{display:grid;grid-template-columns:1.4fr 1fr;gap:18px}
+.tarjeta{position:relative;border-radius:var(--r);background:var(--vidrio);backdrop-filter:blur(10px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.95),0 18px 40px rgba(29,24,48,.08);padding:26px;overflow:hidden}
+.tarjeta.estrella{grid-row:span 2;display:grid;grid-template-columns:1fr 200px;gap:10px;align-items:end;background:linear-gradient(160deg,rgba(255,255,255,.85),rgba(255,255,255,.55)),var(--holo)}
+.tarjeta .num{font-family:var(--f-display);font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--tinta-2)}
+.tarjeta h3{font-family:var(--f-display);font-weight:700;font-size:22px;line-height:1.15;margin:8px 0 8px}
+.tarjeta.estrella h3{font-size:clamp(26px,3.4vw,36px)}
+.tarjeta p{color:var(--tinta-2);font-size:15px}
+.etiqueta{display:inline-block;margin-top:14px;padding:6px 12px;border-radius:999px;background:#fff;color:var(--violeta);box-shadow:inset 0 0 0 1.5px #E6DEFA;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.etiqueta.clara{background:#fff;color:var(--tinta);box-shadow:inset 0 0 0 1px var(--linea);text-decoration:none}
+a.etiqueta:hover{background:var(--boton)}
+.precio-mini{margin-top:18px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.precio-mini b{font-family:var(--f-display);font-size:30px}
+.precio-mini s{color:var(--tinta-2);font-weight:700}
+.ilus-mini{position:absolute;right:-18px;top:-18px;width:120px;opacity:.95}
+
+/* incluye */
+.incluye{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.inc{padding:24px;border-radius:var(--r);background:var(--vidrio);backdrop-filter:blur(10px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.95),0 14px 32px rgba(29,24,48,.07);display:grid;gap:10px;align-content:start}
+.inc svg{width:76px;height:76px}
+.inc h3{font-family:var(--f-display);font-weight:700;font-size:18px;line-height:1.2}
+.inc p{font-size:15px;color:var(--tinta-2)}
+.inc ul{margin:2px 0 0;padding-left:18px;font-size:14px;color:var(--tinta-2)}
+
+/* flujo */
+.flujo{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:12px;position:relative;counter-reset:paso}
+.flujo::before{content:"";position:absolute;left:6%;right:6%;top:38px;height:4px;border-radius:4px;background:var(--holo);box-shadow:0 0 0 1px rgba(255,255,255,.9)}
+.flujo li{position:relative;display:grid;justify-items:center;text-align:center;gap:10px;counter-increment:paso}
+.flujo .orb{width:78px;height:78px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 32% 28%,#fff 0%,#f1ecfb 40%,#cfc6ea 85%);box-shadow:inset -6px -8px 16px rgba(110,69,217,.18),inset 6px 6px 14px #fff,0 10px 22px rgba(29,24,48,.12)}
+.flujo .orb svg{width:34px;height:34px}
+.flujo b{font-family:var(--f-display);font-size:14px;font-weight:700}
+.flujo b::before{content:counter(paso) ". ";color:var(--violeta)}
+.flujo span{font-size:13px;color:var(--tinta-2);max-width:18ch}
+.flujo li.final .orb{background:var(--holo);box-shadow:0 0 0 3px #fff,0 0 0 6px rgba(149,114,234,.25)}
+
+/* demo */
+.demo-zona{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:start}
+.demo-col{display:grid;gap:16px;justify-items:center}
+.controles{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.modo{font-size:13px;font-weight:700;color:var(--tinta-2);text-align:center;min-height:20px}
+.modo b{color:var(--violeta)}
+.telefono{position:relative;width:min(330px,86vw);aspect-ratio:330/670;border-radius:48px;padding:11px;background:var(--cromo-claro);box-shadow:0 30px 60px rgba(149,114,234,.25),inset 0 0 0 1.5px #fff,0 0 0 1px #d6cfe8}
+.telefono::after{content:"";position:absolute;top:20px;left:50%;transform:translateX(-50%);width:92px;height:24px;border-radius:20px;background:#E4DDF3;box-shadow:inset 0 0 0 1px #fff;z-index:6}
+.pantalla{position:relative;height:100%;border-radius:38px;overflow:hidden;background:#FBF9FF}
+.d-scroll{height:100%;overflow-y:auto;overscroll-behavior:contain;padding:54px 14px 22px;scrollbar-width:none}
+.d-scroll::-webkit-scrollbar{display:none}
+.cursor{position:absolute;left:0;top:0;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;background:rgba(255,255,255,.55);box-shadow:0 0 0 2px rgba(110,69,217,.75),0 8px 18px rgba(29,24,48,.25);z-index:8;pointer-events:none;transition:transform .65s cubic-bezier(.5,0,.2,1),opacity .3s;opacity:0}
+.cursor.on{opacity:1}
+.cursor.tap{box-shadow:0 0 0 2px rgba(110,69,217,.9),0 0 0 12px rgba(110,69,217,.18)}
+.historias{position:absolute;top:50px;left:16px;right:16px;display:flex;gap:4px;z-index:5;pointer-events:none}
+.historias span{flex:1;height:3px;border-radius:3px;background:rgba(29,24,48,.12)}
+.historias span.on{background:#C9BEF0}
+
+/* app demo dentro del teléfono */
+.d-top{display:flex;align-items:center;justify-content:space-between;margin:6px 0 12px}
+.d-volver{border:0;background:#fff;border-radius:999px;padding:7px 12px;font-size:12px;font-weight:800;box-shadow:0 4px 12px rgba(29,24,48,.1)}
+.d-logo-mini{font-family:var(--f-display);font-weight:800;font-size:13px;letter-spacing:.06em}
+.d-hero{text-align:center;padding:18px 12px 18px;border-radius:24px;background:linear-gradient(170deg,rgba(255,255,255,.7),rgba(255,255,255,.3)),var(--holo);box-shadow:inset 0 0 0 1px #fff;position:relative;overflow:hidden}
+.d-logo{font-family:var(--f-display);font-weight:800;font-size:22px;letter-spacing:.05em}
+.d-logo small{display:block;font-family:var(--f-serif);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:300;color:var(--tinta-2)}
+.d-eyebrow{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--violeta);margin-top:12px}
+.d-tit{font-family:var(--f-display);font-weight:800;font-size:24px;line-height:1.05;margin:6px 0 8px}
+.d-tit em{font-style:normal}
+.d-txt{font-size:12.5px;color:var(--tinta-2)}
+.d-row{display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+.d-btn{border:0;border-radius:999px;padding:9px 14px;font-size:12px;font-weight:800;background:#fff;color:var(--tinta);box-shadow:inset 0 0 0 1.5px #E6DEFA}
+.d-btn.ghost{background:#fff;color:var(--tinta);box-shadow:inset 0 0 0 1px var(--linea)}
+.d-h{font-family:var(--f-display);font-weight:700;font-size:16px;margin:18px 2px 10px}
+.d-semanas{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.d-sem{border:0;text-align:left;border-radius:18px;padding:12px;background:#fff;box-shadow:inset 0 0 0 1px var(--linea),0 6px 14px rgba(29,24,48,.06);display:grid;gap:2px}
+.d-sem small{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-2)}
+.d-sem b{font-family:var(--f-display);font-size:14px}
+.d-sem span{font-size:10.5px;font-weight:700;color:var(--violeta)}
+.d-arts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.d-art{border:0;border-radius:20px;padding:14px 8px 12px;background:#fff;box-shadow:inset 0 0 0 1px var(--linea),0 6px 14px rgba(29,24,48,.06);display:grid;justify-items:center;gap:4px;text-align:center}
+.d-art:last-child:nth-child(odd){grid-column:span 2}
+.d-av{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:22px;padding:3px;background:var(--cromo-osc)}
+.d-av i{width:100%;height:100%;border-radius:50%;display:grid;place-items:center;font-style:normal}
+.d-art b{font-family:var(--f-display);font-size:13.5px;margin-top:4px}
+.d-art span{font-size:11px;color:var(--tinta-2)}
+.d-art u{text-decoration:none;font-size:11px;font-weight:800;color:var(--violeta)}
+.d-perfil{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.d-perfil .d-av{width:48px;height:48px;font-size:16px}
+.d-perfil b{font-family:var(--f-display);font-size:16px;display:block}
+.d-perfil span{font-size:11.5px;color:var(--tinta-2)}
+.d-card{background:#fff;border-radius:20px;padding:12px;box-shadow:inset 0 0 0 1px var(--linea);margin-bottom:10px}
+.d-card h4{margin:0 0 8px;font-family:var(--f-display);font-size:13px;font-weight:700}
+.d-dias{display:flex;gap:7px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.d-dia{flex:0 0 auto;width:54px;border:0;border-radius:14px;padding:7px 4px;background:var(--perla);box-shadow:inset 0 0 0 1px var(--linea);display:grid;gap:0;text-align:center}
+.d-dia small{font-size:9.5px;font-weight:800;text-transform:uppercase;color:var(--tinta-2)}
+.d-dia b{font-family:var(--f-display);font-size:17px}
+.d-dia span{font-size:9px;font-weight:700;color:var(--tinta-2)}
+.d-dia.sel{background:var(--holo);box-shadow:inset 0 0 0 2px #C9BEF0}
+.d-dia:disabled{opacity:.4;cursor:not-allowed}
+.d-horas{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.d-hora{border:0;border-radius:12px;padding:9px 2px;font-size:12px;font-weight:800;background:var(--perla);box-shadow:inset 0 0 0 1px var(--linea)}
+.d-hora.sel{background:var(--holo);box-shadow:inset 0 0 0 2px #B4A6E8}
+.d-hora:disabled{text-decoration:line-through;color:#b2abc4;background:#f1eef6;cursor:not-allowed}
+.d-ley{display:flex;gap:10px;justify-content:center;font-size:10px;color:var(--tinta-2);margin-top:8px}
+.d-ley i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px;box-shadow:inset 0 0 0 1px var(--linea)}
+.d-principal{display:block;width:100%;border:0;border-radius:999px;padding:13px;font-size:13.5px;font-weight:800;background:var(--boton);color:var(--tinta);box-shadow:inset 0 0 0 1.5px #fff,0 6px 16px rgba(149,114,234,.25);margin-top:6px}
+.d-principal:disabled{opacity:.35;cursor:not-allowed}
+.d-nota{font-size:10.5px;text-align:center;color:var(--tinta-2);margin-top:8px}
+.d-res{display:grid;gap:3px;font-size:12px}
+.d-res b{font-weight:800}
+.d-campo{display:grid;gap:5px;font-size:11.5px;font-weight:800;margin-top:10px}
+.d-campo input{width:100%;border:0;border-radius:12px;padding:11px 12px;font:inherit;font-weight:600;font-size:14px;background:var(--perla);box-shadow:inset 0 0 0 1px var(--linea);color:var(--tinta)}
+.d-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.d-chip{border:0;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:700;background:var(--perla);box-shadow:inset 0 0 0 1px var(--linea)}
+.d-chip.sel{background:var(--holo);box-shadow:inset 0 0 0 1.5px #B4A6E8}
+.d-aviso{font-size:11px;line-height:1.45;padding:10px 12px;border-radius:14px;background:linear-gradient(#fff,#fff) padding-box,var(--holo-osc) border-box;border:1.5px solid transparent;margin-top:10px}
+.d-acepto{display:flex;gap:8px;align-items:flex-start;font-size:11.5px;font-weight:700;margin-top:10px}
+.d-acepto input{width:18px;height:18px;accent-color:#B4A6E8;margin:0;flex:0 0 auto}
+.d-modal{position:absolute;inset:0;z-index:7;background:rgba(29,24,48,.25);backdrop-filter:blur(3px);display:flex;align-items:flex-end}
+.d-hoja{width:100%;max-height:78%;overflow:auto;background:#fff;border-radius:26px 26px 0 0;padding:18px 16px 20px}
+.d-hoja h4{font-family:var(--f-display);font-size:16px;margin:0 0 10px;display:flex;justify-content:space-between;align-items:center}
+.d-hoja h4 button{border:0;background:var(--perla);border-radius:50%;width:30px;height:30px;font-weight:800}
+.d-item{display:flex;justify-content:space-between;gap:8px;padding:9px 0;border-bottom:1px solid var(--linea);font-size:12.5px}
+.d-item b{font-variant-numeric:tabular-nums}
+.d-pol{padding:8px 0;border-bottom:1px solid var(--linea);font-size:12px}
+.d-pol b{display:block;font-size:12.5px}
+.d-wa{margin:-54px -14px -22px;min-height:calc(100% + 76px);background:#ECE5DD;display:flex;flex-direction:column}
+.d-wa-top{background:linear-gradient(135deg,#EADFFF,#FBDDEE);color:var(--tinta);padding:52px 14px 12px;display:flex;align-items:center;gap:10px}
+.d-wa-top i{width:34px;height:34px;border-radius:50%;background:var(--holo);display:block}
+.d-wa-top b{font-size:14px;display:block}
+.d-wa-top span{font-size:11px;opacity:.75}
+.d-wa-chat{padding:16px 12px;display:grid;gap:10px;flex:1;align-content:start;background:radial-gradient(rgba(29,24,48,.05) 1px,transparent 1px) 0 0/14px 14px,#EFE9F7}
+.burbuja{justify-self:end;max-width:88%;background:#E3F8D4;border-radius:14px 14px 4px 14px;padding:10px 12px;font-size:12px;line-height:1.5;white-space:pre-line;box-shadow:0 1px 1px rgba(0,0,0,.08)}
+.burbuja small{display:block;text-align:right;font-size:10px;color:#6b7a62;margin-top:4px}
+.d-wa-nota{margin:0 12px 16px;padding:10px 12px;border-radius:14px;background:#fff;font-size:11.5px;text-align:center;font-weight:600}
+
+/* panel secretaria */
+.panel{width:100%;border-radius:30px;padding:22px;background:var(--vidrio);backdrop-filter:blur(10px);box-shadow:inset 0 0 0 1px #fff,0 20px 44px rgba(29,24,48,.1)}
+.panel-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.panel-head h3{font-family:var(--f-display);font-size:20px;font-weight:700}
+.panel-head span{font-size:12px;font-weight:800;padding:6px 12px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px var(--linea)}
+.panel p.ayuda{font-size:14px;color:var(--tinta-2);margin:8px 0 14px}
+.p-lbl{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-2);margin:12px 0 6px}
+.p-fila{display:flex;flex-wrap:wrap;gap:7px}
+.p-chip{border:0;border-radius:999px;padding:8px 13px;font-size:13px;font-weight:700;background:#fff;box-shadow:inset 0 0 0 1px var(--linea)}
+.p-chip.on{background:var(--holo);box-shadow:inset 0 0 0 1.5px #B4A6E8}
+.p-tabla{overflow-x:auto;margin-top:14px;border-radius:18px;background:#fff;padding:8px;box-shadow:inset 0 0 0 1px var(--linea)}
+.p-tabla table{border-collapse:separate;border-spacing:5px;width:100%;min-width:520px}
+.p-tabla th{font-size:11px;font-weight:800;color:var(--tinta-2);text-transform:uppercase;padding:2px}
+.p-tabla th b{display:block;font-family:var(--f-display);font-size:16px;color:var(--tinta);text-transform:none}
+.p-tabla th button{margin-top:4px;border:0;border-radius:999px;padding:3px 8px;font-size:10.5px;font-weight:800;background:var(--perla);text-transform:none}
+.p-tabla td.h{font-size:12px;font-weight:800;white-space:nowrap;text-align:right;color:var(--tinta-2);font-variant-numeric:tabular-nums}
+.celda{width:100%;border:0;border-radius:10px;padding:9px 2px;font-size:11.5px;font-weight:800;background:#EEF9F4;color:#2f8a63;box-shadow:inset 0 0 0 1px rgba(47,138,99,.25)}
+.celda.res{background:#F6E6F0;color:#a0336f;text-decoration:line-through;box-shadow:inset 0 0 0 1px rgba(160,51,111,.3)}
+.celda.cerrado{background:#f1eef6;color:#a39cb6;box-shadow:none}
+
+/* panel: pestañas y formularios */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.p-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 4px;padding:5px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px var(--linea)}
+.p-tab{border:0;border-radius:999px;padding:9px 14px;font-weight:800;font-size:13px;background:transparent;color:var(--tinta-2)}
+.p-tab.on{background:var(--holo);color:var(--tinta);box-shadow:inset 0 0 0 1.5px #D9CFF5}
+.p-cuerpo{margin-top:10px}
+.p-chip.apagada{opacity:.55;text-decoration:line-through}
+.p-resumen{margin-top:12px;font-size:13px;font-weight:700;color:var(--tinta-2)}
+.celda.vacia{display:block;text-align:center;background:transparent;box-shadow:none;color:#c9c3d8}
+.celda.cerrado{display:block;text-align:center}
+.celda.sel{box-shadow:inset 0 0 0 2px #B4A6E8}
+.p-caja{margin-top:14px;padding:16px;border-radius:20px;background:#fff;box-shadow:inset 0 0 0 1px var(--linea),0 10px 24px rgba(180,166,232,.12);display:grid;gap:10px}
+.p-caja h4{margin:0;font-family:var(--f-display);font-size:15px;font-weight:700}
+.p-caja p{margin:0;font-size:14px}
+.p-campo{display:grid;gap:5px;font-size:12px;font-weight:800;color:var(--tinta-2)}
+.p-campo input,.p-campo select,.p-campo textarea{width:100%;border:0;border-radius:12px;padding:10px 12px;font:inherit;font-weight:600;font-size:14px;color:var(--tinta);background:var(--perla);box-shadow:inset 0 0 0 1px var(--linea);resize:vertical}
+.p-btn{border:0;border-radius:999px;padding:10px 16px;font-weight:800;font-size:13px;background:var(--boton);color:var(--tinta);box-shadow:inset 0 0 0 1.5px #fff,0 6px 14px rgba(180,166,232,.22)}
+.p-btn.suave{background:#fff;box-shadow:inset 0 0 0 1.5px #E6DEFA}
+.p-btn.mini{padding:6px 12px;font-size:12px}
+.p-msg{min-height:1em;font-size:13px;font-weight:700;color:#a0336f}
+.crm{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:16px}
+.cl-lista{display:grid;gap:6px;margin-top:10px;max-height:300px;overflow:auto}
+.cl-item{border:0;text-align:left;border-radius:14px;padding:10px 12px;background:#fff;box-shadow:inset 0 0 0 1px var(--linea);display:grid;gap:1px}
+.cl-item b{font-size:14px}.cl-item span{font-size:12px;color:var(--tinta-2)}
+.cl-item.on{background:var(--holo);box-shadow:inset 0 0 0 1.5px #D9CFF5}
+.ficha{background:#fff;border-radius:20px;padding:16px;box-shadow:inset 0 0 0 1px var(--linea)}
+.ficha h4{margin:0 0 8px;font-family:var(--f-display);font-size:18px}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0;font-size:13.5px}
+.ficha dt{font-weight:800;color:var(--tinta-2)}.ficha dd{margin:0}
+.hist{display:grid;gap:1px;padding:8px 10px;border-radius:12px;background:var(--perla);margin-top:6px;font-size:13px}
+.hist span{color:var(--tinta-2)}.hist.prox{background:#F3F9F7}
+.dias-ed{display:grid;gap:10px;margin-top:12px}
+.dia-ed{background:#fff;border-radius:18px;padding:12px;box-shadow:inset 0 0 0 1px var(--linea)}
+.dia-ed.cerrado{opacity:.6}
+.dia-ed-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px;font-size:14px}
+.ed-chip{border:0;border-radius:10px;padding:7px 10px;font-size:12px;font-weight:800;background:var(--perla);color:#a39cb6;box-shadow:inset 0 0 0 1px var(--linea);text-decoration:line-through}
+.ed-chip.on{background:#EEF9F4;color:#2f8a63;box-shadow:inset 0 0 0 1px rgba(47,138,99,.25);text-decoration:none}
+.ed-chip:disabled{cursor:not-allowed}
+.arts-ed{display:grid;gap:10px;margin-top:12px}
+.art-ed{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;background:#fff;border-radius:18px;padding:12px;box-shadow:inset 0 0 0 1px var(--linea)}
+.art-ed .d-av{width:52px;height:52px;font-size:18px}
+.art-ed.apagada{opacity:.6}
+.art-ed-datos{display:grid;gap:6px}
+.aj-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+@media (max-width:620px){ .crm,.aj-grid{grid-template-columns:1fr} .art-ed{grid-template-columns:auto minmax(0,1fr)} .art-ed .p-btn{grid-column:1/-1;justify-self:start} }
+/* aviso */
+.aviso{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;padding:28px;border-radius:30px;background:linear-gradient(var(--perla),var(--perla)) padding-box,var(--holo-osc) border-box;border:2px solid transparent}
+.aviso svg{width:90px;height:90px}
+.aviso h3{font-family:var(--f-display);font-size:22px;font-weight:700;margin-bottom:8px}
+.aviso p{color:var(--tinta-2);max-width:72ch}
+.aviso p+p{margin-top:8px}
+
+/* precio */
+.precio-zona{display:grid;grid-template-columns:1.1fr 1fr;gap:18px}
+.precio{position:relative;border-radius:32px;padding:32px;color:var(--tinta);background:linear-gradient(165deg,rgba(255,255,255,.88),rgba(255,255,255,.55)),var(--holo);overflow:hidden;box-shadow:inset 0 0 0 2px #fff,0 26px 50px rgba(149,114,234,.22)}
+.precio .serif-caps{color:var(--tinta-2)}
+.precio h3{font-family:var(--f-display);font-size:clamp(24px,3vw,32px);font-weight:700;margin:10px 0 6px}
+.precio .cifra{font-family:var(--f-display);font-weight:800;font-size:clamp(48px,7vw,74px);line-height:1;margin:18px 0 6px;font-variant-numeric:tabular-nums}
+.precio .cifra.holo-txt{background:var(--holo-osc);-webkit-background-clip:text;background-clip:text}
+.precio .despues{font-size:16px;color:var(--tinta-2)}
+.precio .despues b{color:var(--tinta)}
+.escala{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px}
+.escala li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;border-radius:16px;background:rgba(255,255,255,.75);box-shadow:inset 0 0 0 1px #fff;font-size:15px;font-weight:600;color:var(--tinta-2)}
+.escala b{font-family:var(--f-display);font-size:18px;color:var(--tinta);font-variant-numeric:tabular-nums}
+.cupos{display:flex;gap:8px;margin:22px 0 8px}
+.cupos i{width:34px;height:34px;border-radius:50%;background:var(--holo);box-shadow:inset -4px -5px 8px rgba(110,69,217,.25),inset 3px 3px 6px #fff}
+.cupos i.tomado{background:#fff;box-shadow:inset 0 0 0 1.5px #d6cfe8}
+.cupos-txt{font-size:14px;font-weight:700;color:var(--tinta-2)}
+.precio .btn{margin-top:22px}
+.calc{border-radius:32px;padding:28px;background:var(--vidrio);backdrop-filter:blur(10px);box-shadow:inset 0 0 0 1px #fff,0 18px 40px rgba(29,24,48,.08);display:grid;gap:14px;align-content:start}
+.calc h3{font-family:var(--f-display);font-size:22px;font-weight:700}
+.calc label{font-weight:800;font-size:14px;display:flex;justify-content:space-between;gap:10px}
+.calc label output{font-family:var(--f-display);font-variant-numeric:tabular-nums}
+.calc input[type=range]{width:100%;accent-color:#6E45D9}
+.calc-res{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;padding:16px;border-radius:22px;background:#fff;box-shadow:inset 0 0 0 1px var(--linea)}
+.calc-res .n{font-family:var(--f-display);font-weight:800;font-size:54px;line-height:1;font-variant-numeric:tabular-nums}
+.calc-res p{font-size:15px}
+.clientas{display:flex;flex-wrap:wrap;gap:5px}
+.clientas i{width:20px;height:20px;border-radius:50%;background:var(--holo);box-shadow:inset 0 0 0 1px rgba(29,24,48,.12)}
+.calc small{color:var(--tinta-2);font-size:13px}
+
+/* entregables */
+.entregables{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;list-style:none;margin:0;padding:0}
+.entregables li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;padding:16px 18px;border-radius:20px;background:var(--vidrio);box-shadow:inset 0 0 0 1px #fff}
+.entregables li i{width:44px;height:44px;border-radius:14px;background:var(--holo);display:grid;place-items:center;font-style:normal;font-family:var(--f-display);font-weight:800;font-size:15px;box-shadow:inset 0 0 0 1.5px #fff}
+.entregables b{display:block;font-size:16px}
+.entregables span{font-size:14px;color:var(--tinta-2)}
+
+/* cierre */
+.cierre{margin:90px 0 0;padding:44px 30px 60px;border-radius:36px;text-align:center;background:linear-gradient(170deg,rgba(255,255,255,.75),rgba(255,255,255,.35)),var(--holo);box-shadow:inset 0 0 0 1.5px #fff;display:grid;gap:14px;justify-items:center;position:relative;overflow:hidden}
+.cierre .h2{max-width:20ch}
+.cierre p{color:var(--tinta-2);max-width:56ch}
+footer{padding-top:40px;padding-bottom:50px;text-align:center;font-size:13px;color:var(--tinta-2)}
+footer b{font-family:var(--f-display);font-size:18px;color:var(--tinta);letter-spacing:.05em}
+
+@media (max-width:980px){
+  .e-hero{grid-template-columns:1fr}
+  .e-demo{grid-template-columns:1fr}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .linea-tiempo{grid-template-columns:repeat(2,1fr);row-gap:24px}
+  .linea-tiempo::before{display:none}
+  .adviento{grid-template-columns:auto 1fr}
+  .adviento .btn{grid-column:1/-1;justify-self:start}
+  .hero{grid-template-columns:1fr}
+  .hero-arte{max-width:420px;order:-1}
+  .servicios{grid-template-columns:1fr}
+  .tarjeta.estrella{grid-row:auto}
+  .incluye{grid-template-columns:repeat(2,1fr)}
+  .flujo{grid-template-columns:repeat(3,1fr);row-gap:26px}
+  .flujo::before{display:none}
+  .demo-zona{grid-template-columns:1fr}
+  .precio-zona{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  .barra{grid-template-columns:110px 1fr 36px;font-size:12px}
+  .adviento{grid-template-columns:1fr;justify-items:start}
+  .adviento svg{width:120px}
+  .arbol-cierre{display:none}
+  .tarjeta.estrella{grid-template-columns:1fr}
+  .tarjeta.estrella svg{max-width:180px;justify-self:center;order:-1}
+  .incluye{grid-template-columns:1fr}
+  .flujo{grid-template-columns:repeat(2,1fr)}
+  .entregables{grid-template-columns:1fr}
+  .aviso{grid-template-columns:1fr}
+  .marca span{display:none}
+  .tarjeta,.inc,.calc,.precio,.panel,.tablero{padding:22px}
+  .sec{padding-top:64px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<div class="fondo" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="grano" aria-hidden="true"></div>
+
+<!-- degradados holográficos compartidos -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FDE6F1"/><stop offset=".28" stop-color="#E6DEFA"/><stop offset=".55" stop-color="#DDF7F6"/><stop offset=".76" stop-color="#FFF7E8"/><stop offset="1" stop-color="#F3E6FD"/>
+    </linearGradient>
+    <linearGradient id="hg2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DDF7F6"/><stop offset=".35" stop-color="#EFE5FD"/><stop offset=".7" stop-color="#FDE4F0"/><stop offset="1" stop-color="#FFF8EC"/>
+    </linearGradient>
+    <radialGradient id="perla" cx=".34" cy=".3" r=".75">
+      <stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#f1ecfb"/><stop offset=".8" stop-color="#d3caee"/><stop offset="1" stop-color="#b9b0dc"/>
+    </radialGradient>
+    <radialGradient id="perlaRosa" cx=".34" cy=".3" r=".75">
+      <stop offset="0" stop-color="#ffffff"/><stop offset=".4" stop-color="#fde3f0"/><stop offset=".8" stop-color="#e9b9d8"/><stop offset="1" stop-color="#cfa0c8"/>
+    </radialGradient>
+    <linearGradient id="cromo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#dcd8ea"/><stop offset=".5" stop-color="#8d87a6"/><stop offset=".65" stop-color="#efecf8"/><stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="tintaG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3a3355"/><stop offset="1" stop-color="#1D1830"/>
+    </linearGradient>
+    <filter id="sombra" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#B4A6E8" flood-opacity=".16"/></filter>
+    <symbol id="gorro" viewBox="0 0 100 86">
+      <path d="M14 62C20 30 44 6 72 10c10 2 16 10 18 22-8-6-16-6-22 2l-6 28Z" fill="#F6B3CF"/>
+      <path d="M30 40c10-16 26-24 42-22" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" opacity=".55"/>
+      <rect x="6" y="58" width="66" height="20" rx="10" fill="url(#perla)" stroke="#fff" stroke-width="2"/>
+      <circle cx="88" cy="40" r="11" fill="url(#perla)" stroke="#fff" stroke-width="2"/>
+    </symbol>
+    <symbol id="arbol" viewBox="0 0 160 200">
+      <rect x="70" y="168" width="20" height="24" rx="5" fill="url(#cromo)" stroke="#bdb6d4"/>
+      <path d="M80 30 128 98H32Z" fill="url(#hg)" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M80 62 140 140H20Z" fill="url(#hg2)" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M80 98 152 176H8Z" fill="url(#hg)" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M48 120q32 14 64-4M36 156q44 14 88-6" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" opacity=".85"/>
+      <circle cx="62" cy="88" r="7" fill="url(#perlaRosa)"/><circle cx="100" cy="124" r="8" fill="url(#perla)"/><circle cx="56" cy="140" r="7" fill="url(#perla)"/><circle cx="110" cy="160" r="8" fill="url(#perlaRosa)"/><circle cx="86" cy="76" r="5" fill="url(#perla)"/>
+      <path d="M80 2C82 18 86 22 102 24 86 26 82 30 80 46 78 30 74 26 58 24 74 22 78 18 80 2Z" fill="url(#cromo)" stroke="#bdb6d4" stroke-width="1.2"/>
+    </symbol>
+    <symbol id="chispa" viewBox="-40 -40 80 80"><path d="M0-40C4-9 9-4 40 0 9 4 4 9 0 40-4 9-9 4-40 0-9-4-4-9 0-40Z"/></symbol>
+  </defs>
+</svg>
+
+<header class="wrap nav">
+  <div class="marca-col"><a class="marca" href="#inicio"><b class="cromo-txt">REDYZ</b><span>Laboratorio estratégico &amp; creativo</span></a><span class="firma">By <b>Marypaz Cadavid</b></span></div>
+  <a class="btn btn-osc btn-sm" href="#precio">Quiero mi agenda</a>
+</header>
+
+<main id="inicio" data-pagina="principal">
+  <!-- HERO -->
+  <section class="wrap hero">
+    <div>
+      <p class="serif-caps">Temporada navideña 2026 · Spas y estéticas de belleza</p>
+      <h1>Bienvenida a las <span class="holo-txt">agendas navideñas</span></h1>
+      <p class="lead">Calendarios especiales de Navidad para tu spa o estética que se quedan contigo para siempre. Tus clientas eligen artista, día y hora desde su celular, y la solicitud te llega lista a WhatsApp.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-osc" href="#demo">Probar la agenda</a>
+        <a class="btn btn-holo" href="#precio">Ver precio</a>
+      </div>
+      <div class="sello" id="sello"><em>Primeros 5</em> $250.000 · obsequio navideño</div>
+    </div>
+    <div class="hero-arte" aria-hidden="true">
+      <svg viewBox="0 0 500 500">
+        <!-- anillo de perlas -->
+        <g class="gira" style="transform-origin:250px 250px">
+          <circle cx="250" cy="250" r="205" fill="none" stroke="url(#cromo)" stroke-width="2" opacity=".7"/>
+          <circle cx="250" cy="45" r="11" fill="url(#perla)"/><circle cx="455" cy="250" r="8" fill="url(#perla)"/><circle cx="105" cy="395" r="10" fill="url(#perlaRosa)"/>
+        </g>
+        <!-- calendario holográfico -->
+        <g class="flota" filter="url(#sombra)">
+          <rect x="140" y="130" width="230" height="250" rx="34" fill="url(#hg)"/>
+          <rect x="140" y="130" width="230" height="250" rx="34" fill="none" stroke="#fff" stroke-width="3"/>
+          <path d="M140 196h230" stroke="#fff" stroke-width="3"/>
+          <rect x="190" y="112" width="16" height="44" rx="8" fill="url(#cromo)" stroke="#8d87a6" stroke-width="1"/>
+          <rect x="304" y="112" width="16" height="44" rx="8" fill="url(#cromo)" stroke="#8d87a6" stroke-width="1"/>
+          <text x="255" y="176" text-anchor="middle" font-family="Unbounded,sans-serif" font-weight="800" font-size="22" fill="#C9BEF0">DICIEMBRE</text>
+          <g fill="#fff" opacity=".85">
+            <rect x="166" y="216" width="34" height="30" rx="9"/><rect x="210" y="216" width="34" height="30" rx="9"/><rect x="254" y="216" width="34" height="30" rx="9"/><rect x="298" y="216" width="34" height="30" rx="9"/>
+            <rect x="166" y="258" width="34" height="30" rx="9"/><rect x="254" y="258" width="34" height="30" rx="9"/><rect x="298" y="258" width="34" height="30" rx="9"/>
+            <rect x="166" y="300" width="34" height="30" rx="9"/><rect x="210" y="300" width="34" height="30" rx="9"/><rect x="298" y="300" width="34" height="30" rx="9"/>
+          </g>
+          <rect x="210" y="258" width="34" height="30" rx="9" fill="#C9BEF0"/>
+          <text x="227" y="279" text-anchor="middle" font-family="Unbounded,sans-serif" font-weight="700" font-size="13" fill="#fff">24</text>
+          <rect x="254" y="300" width="34" height="30" rx="9" fill="none" stroke="#5B4F7E" stroke-width="2.5" stroke-dasharray="4 3"/>
+          <path d="M210 352h90" stroke="#5B4F7E" stroke-width="3" stroke-linecap="round" opacity=".35"/>
+          <use href="#gorro" x="128" y="72" width="90" height="78" transform="rotate(-16 173 111)"/>
+        </g>
+        <!-- árbol holográfico -->
+        <use href="#arbol" x="360" y="250" width="130" height="162" class="flota c" filter="url(#sombra)"/>
+        <!-- dona holográfica -->
+        <g class="flota b">
+          <circle cx="400" cy="120" r="44" fill="none" stroke="url(#hg2)" stroke-width="34"/>
+          <path d="M370 96a40 40 0 0 1 52-12" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+        </g>
+        <!-- esfera navideña perla -->
+        <g class="flota c">
+          <circle cx="92" cy="170" r="48" fill="url(#perlaRosa)"/>
+          <rect x="80" y="112" width="24" height="16" rx="4" fill="url(#cromo)" stroke="#8d87a6"/>
+          <ellipse cx="76" cy="152" rx="13" ry="8" fill="#fff" opacity=".8" transform="rotate(-30 76 152)"/>
+        </g>
+        <!-- resorte -->
+        <path class="flota b" d="M410 440c20-24 46 4 26 22s-46-6-22-28 50 6 28 26-44-2-22-24" fill="none" stroke="url(#hg)" stroke-width="10" stroke-linecap="round"/>
+        <!-- burbuja de WhatsApp -->
+        <g class="flota" style="animation-delay:-3s" filter="url(#sombra)">
+          <path d="M64 330h120a26 26 0 0 1 26 26v26a26 26 0 0 1-26 26H98l-24 18 4-18h-14a26 26 0 0 1-26-26v-26a26 26 0 0 1 26-26Z" fill="#fff"/>
+          <rect x="62" y="352" width="104" height="9" rx="4.5" fill="url(#hg)"/>
+          <rect x="62" y="372" width="72" height="9" rx="4.5" fill="#C9BEF0" opacity=".25"/>
+          <circle cx="186" cy="368" r="11" fill="#C9BEF0"/><path d="M181 368l4 4 7-8" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <!-- destellos -->
+        <use href="#chispa" x="420" y="210" width="44" height="44" fill="url(#cromo)" class="flota c"/>
+        <use href="#chispa" x="40" y="60" width="34" height="34" fill="url(#hg)" class="flota"/>
+        <use href="#chispa" x="300" y="420" width="30" height="30" fill="url(#cromo)" class="flota b"/>
+        <circle cx="440" cy="400" r="16" fill="url(#perla)" class="flota"/>
+        <circle cx="30" cy="260" r="10" fill="url(#perla)" class="flota c"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="wrap sec" id="servicios">
+    <div class="sec-head">
+      <p class="serif-caps">Fórmulas del laboratorio</p>
+      <h2 class="h2">Servicios de temporada para tu negocio de belleza</h2>
+    </div>
+    <div class="servicios">
+      <article class="tarjeta estrella">
+        <div>
+          <span class="num">01 · SERVICIO ESTRELLA</span>
+          <h3>Agenda navideña automática y personalizada</h3>
+          <p>Una página de reservas con tu marca: catálogo, políticas, semanas, artistas, días y horas. Tus clientas eligen y te escriben por WhatsApp con todo listo. Incluye panel para tu equipo con clientas, horarios y artistas. Es tuya para siempre.</p>
+          <div class="precio-mini" id="precio-card"><b>$250.000</b><s>$550.000</s><span class="etiqueta">Primeros 5 cupos</span></div>
+        </div>
+        <svg viewBox="0 0 200 220" aria-hidden="true">
+          <rect x="40" y="10" width="120" height="200" rx="26" fill="url(#cromo)" stroke="#8d87a6"/>
+          <rect x="48" y="18" width="104" height="184" rx="20" fill="#FBF9FF"/>
+          <rect x="58" y="34" width="84" height="40" rx="12" fill="url(#hg)"/>
+          <g fill="#fff" stroke="#e2dcf1"><rect x="58" y="84" width="24" height="22" rx="7"/><rect x="88" y="84" width="24" height="22" rx="7"/><rect x="118" y="84" width="24" height="22" rx="7"/><rect x="58" y="112" width="24" height="22" rx="7"/><rect x="118" y="112" width="24" height="22" rx="7"/></g>
+          <rect x="88" y="112" width="24" height="22" rx="7" fill="#C9BEF0"/>
+          <rect x="58" y="148" width="84" height="18" rx="9" fill="#C9BEF0"/>
+          <use href="#chispa" x="140" y="8" width="40" height="40" fill="url(#hg2)"/>
+          <circle cx="34" cy="170" r="16" fill="url(#perla)"/>
+        </svg>
+      </article>
+      <article class="tarjeta">
+        <svg class="ilus-mini" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="34" fill="none" stroke="url(#hg)" stroke-width="22"/><use href="#chispa" x="70" y="10" width="34" height="34" fill="url(#cromo)"/></svg>
+        <span class="num">02 · DURA TODO EL AÑO</span>
+        <h3>Encuesta de satisfacción</h3>
+        <p>Tus clientas califican su cita al salir y tú ves los resultados en una página privada. De regalo, estilo navideño hasta cuando quieras; en 2027, el estilo de tu marca.</p>
+        <div class="precio-mini" style="margin-top:12px"><b style="font-size:24px">$200.000</b></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="etiqueta" href="#encuesta" style="text-decoration:none">Ver prototipo ›</a><a class="etiqueta clara cta-wa" data-servicio="Encuesta de satisfacción" href="#" target="_blank" rel="noopener">Cotiza por WhatsApp</a></div>
+      </article>
+      <article class="tarjeta">
+        <svg class="ilus-mini" viewBox="0 0 120 120" aria-hidden="true"><circle cx="58" cy="62" r="30" fill="url(#perlaRosa)"/><path d="M84 30c12 10-4 22 8 32" stroke="url(#hg2)" stroke-width="8" fill="none" stroke-linecap="round"/></svg>
+        <span class="num">03</span>
+        <h3>Catálogo web de servicios</h3>
+        <p>Tus servicios y precios en una página con estilo de marca, lista para enviar por WhatsApp o poner en tu bio.</p>
+        <a class="etiqueta clara cta-wa" data-servicio="Catálogo web de servicios" href="#" target="_blank" rel="noopener">Cotiza por WhatsApp</a>
+      </article>
+    </div>
+    <aside class="adviento">
+      <svg viewBox="0 0 160 150" aria-hidden="true">
+        <rect x="8" y="22" width="144" height="120" rx="20" fill="url(#hg)" stroke="#fff" stroke-width="3"/>
+        <g font-family="Unbounded,sans-serif" font-weight="700" font-size="11" text-anchor="middle" fill="#5B4F7E">
+          <rect x="22" y="38" width="28" height="24" rx="7" fill="#fff"/><text x="36" y="54">1</text>
+          <rect x="56" y="38" width="28" height="24" rx="7" fill="#fff"/><text x="70" y="54">7</text>
+          <rect x="90" y="38" width="48" height="24" rx="7" fill="#fff"/><text x="114" y="54">24</text>
+          <rect x="22" y="68" width="48" height="24" rx="7" fill="#fff"/><text x="46" y="84">12</text>
+          <rect x="76" y="68" width="28" height="24" rx="7" fill="url(#perlaRosa)"/><text x="90" y="84">3</text>
+          <rect x="110" y="68" width="28" height="24" rx="7" fill="#fff"/><text x="124" y="84">18</text>
+          <rect x="22" y="98" width="28" height="24" rx="7" fill="#fff"/><text x="36" y="114">9</text>
+          <rect x="56" y="98" width="28" height="24" rx="7" fill="#fff"/><text x="70" y="114">21</text>
+          <rect x="90" y="98" width="48" height="24" rx="7" fill="#fff"/><text x="114" y="114">15</text>
+        </g>
+        <use href="#gorro" x="104" y="-6" width="58" height="50" transform="rotate(16 133 19)"/>
+        <use href="#chispa" x="0" y="0" width="26" height="26" fill="url(#cromo)"/>
+      </svg>
+      <div>
+        <span class="pronto">Muy pronto</span>
+        <h3>Calendarios de adviento personalizables para tu marca</h3>
+        <p>Una sorpresa diaria para tus clientas hasta Navidad, con tu logo, tus colores y tus promociones.</p>
+      </div>
+      <a class="btn btn-osc btn-sm cta-wa" data-servicio="Calendario de adviento personalizable" href="#" target="_blank" rel="noopener">Quiero que me avisen</a>
+    </aside>
+  </section>
+
+  <!-- QUÉ INCLUYE -->
+  <section class="wrap sec" id="incluye">
+    <div class="sec-head">
+      <p class="serif-caps">Ingredientes de la fórmula</p>
+      <h2 class="h2">¿Qué incluye tu agenda?</h2>
+      <p class="lead">Nueve piezas que trabajan juntas para que tus clientas reserven sin escribirte veinte mensajes, en Navidad y todo el año.</p>
+    </div>
+    <div class="incluye">
+      <article class="inc">
+        <svg viewBox="0 0 80 80" aria-hidden="true"><rect x="6" y="6" width="68" height="68" rx="22" fill="url(#hg)"/><rect x="24" y="14" width="32" height="52" rx="8" fill="#fff" stroke="#5B4F7E" stroke-width="2.5"/><rect x="30" y="24" width="20" height="10" rx="3" fill="#C9BEF0"/><path d="M30 42h20M30 50h12" stroke="#5B4F7E" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <h3>Página de reservas para tus clientas</h3>
+        <p>Acceso a tu catálogo y a tus políticas de agendamiento, y el recorrido completo:</p>
+        <ul><li>Semanas de la temporada</li><li>Artistas con su foto</li><li>Días y horas disponibles</li></ul>
+      </article>
+      <article class="inc">
+        <svg viewBox="0 0 80 80" aria-hidden="true"><rect x="6" y="6" width="68" height="68" rx="22" fill="url(#hg2)"/><circle cx="40" cy="40" r="20" fill="#fff" stroke="#5B4F7E" stroke-width="2.5"/><path d="M40 29v11l8 6" stroke="#5B4F7E" stroke-width="2.8" stroke-linecap="round" fill="none"/><use href="#chispa" x="52" y="8" width="20" height="20" fill="#C9BEF0"/></svg>
+        <h3>Horarios que tú controlas</h3>
+        <p>La artista y el spa definen qué días y horas aparecen. Tus clientas solo ven lo que está disponible.</p>
+      </article>
+      <article class="inc">
+        <svg viewBox="0 0 80 80" aria-hidden="true"><rect x="6" y="6" width="68" height="68" rx="22" fill="url(#hg)"/><path d="M20 24h40a6 6 0 0 1 6 6v18a6 6 0 0 1-6 6H34l-10 8v-8h-4a6 6 0 0 1-6-6V30a6 6 0 0 1 6-6Z" fill="#fff" stroke="#5B4F7E" stroke-width="2.5" stroke-linejoin="round"/><path d="M24 34h28M24 42h18" stroke="#5B4F7E" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <h3>Directo a tu WhatsApp</h3>
+        <p>La clienta escribe su nombre y llega a tu chat con un mensaje que dice su nombre, la artista, el día y la hora que eligió.</p>
+      </article>
+      <article class="inc">
+        <svg viewBox="0 0 80 80" aria-hidden="true"><rect x="6" y="6" width="68" height="68" rx="22" fill="url(#hg2)"/><rect x="16" y="20" width="48" height="40" rx="8" fill="#fff" stroke="#5B4F7E" stroke-width="2.5"/><g fill="#C9BEF0"><rect x="22" y="28" width="10" height="8" rx="2"/><rect x="35" y="28" width="10" height="8" rx="2" opacity=".25"/><rect x="48" y="28" width="10" height="8" rx="2"/><rect x="22" y="42" width="10" height="8" rx="2" opacity=".25"/><rect x="35" y="42" width="10" height="8" rx="2"/><rect x="48" y="42" width="10" height="8" rx="2" opacity=".25"/></g></svg>
+        <h3>Panel para tu secretaria</h3>
+        <p>Una página privada con la agenda de la semana por artista. Reserva un horario con los datos de la clienta o libéralo cuando se cancele.</p>
+      </article>
+      <article class="inc">
+        <svg viewBox="0 0 80 80" aria-hidden="true"><rect x="6" y="6" width="68" height="68" rx="22" fill="url(#hg)"/><circle cx="32" cy="32" r="9" fill="#fff" stroke="#5B4F7E" stroke-width="2.5"/><path d="M18 56c2-9 8-13 14-13s12 4 14 13" fill="none" stroke="#5B4F7E" stroke-width="2.5" stroke-linecap="round"/><path d="M50 30h14M50 40h14M50 50h10" stroke="#5B4F7E" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <h3>Clientas con su historial</h3>
+        <p>Cada reserva queda guardada en la ficha de la clienta: celular, cumpleaños, notas y todos sus procedimientos.</p>
+      </article>
+      <article class="inc">
+        <svg viewBox="0 0 80 80" aria-hidden="true"><rect x="6" y="6" width="68" height="68" rx="22" fill="url(#hg2)"/><circle cx="28" cy="34" r="9" fill="url(#perlaRosa)" stroke="#5B4F7E" stroke-width="2.5"/><circle cx="52" cy="34" r="9" fill="url(#perla)" stroke="#5B4F7E" stroke-width="2.5"/><path d="M16 58c1-7 6-11 12-11s11 4 12 11M40 58c1-7 6-11 12-11s11 4 12 11" fill="none" stroke="#5B4F7E" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <h3>Artistas, horarios y portada editables</h3>
+        <p>Agrega u oculta artistas, habilita días y horas, y cambia los textos y las políticas sin depender de nadie.</p>
+      </article>
+      <article class="inc">
+        <svg viewBox="0 0 80 80" aria-hidden="true"><rect x="6" y="6" width="68" height="68" rx="22" fill="url(#hg)"/><circle cx="32" cy="36" r="12" fill="url(#perlaRosa)" stroke="#5B4F7E" stroke-width="2.5"/><circle cx="48" cy="36" r="12" fill="url(#perla)" stroke="#5B4F7E" stroke-width="2.5" fill-opacity=".9"/><path d="M24 58h32" stroke="#5B4F7E" stroke-width="2.5" stroke-linecap="round"/><use href="#chispa" x="54" y="10" width="18" height="18" fill="#C9BEF0"/></svg>
+        <h3>Con tu marca y fotos navideñas</h3>
+        <p>Tu logo, colores y tipografías. Además editamos con estilo navideño las fotos de tus artistas, tu equipo o tu spa.</p>
+      </article>
+      <article class="inc">
+        <svg viewBox="0 0 80 80" aria-hidden="true"><rect x="6" y="6" width="68" height="68" rx="22" fill="url(#hg2)"/><path d="M22 44v-6a18 18 0 0 1 36 0v6" fill="none" stroke="#5B4F7E" stroke-width="2.5"/><rect x="17" y="42" width="11" height="16" rx="5" fill="#fff" stroke="#5B4F7E" stroke-width="2.5"/><rect x="52" y="42" width="11" height="16" rx="5" fill="#fff" stroke="#5B4F7E" stroke-width="2.5"/><path d="M57 58c0 5-6 8-14 8" fill="none" stroke="#5B4F7E" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <h3>Acompañamiento hasta el 31 de diciembre</h3>
+        <p>Te acompañamos al 100% durante toda la temporada. Si tienes dudas o alguna dificultad, nos escribes.</p>
+      </article>
+      <article class="inc">
+        <svg viewBox="0 0 80 80" aria-hidden="true"><rect x="6" y="6" width="68" height="68" rx="22" fill="url(#hg)"/><path d="M26 40c0-6 4-10 9-10 8 0 12 20 20 20 5 0 9-4 9-10s-4-10-9-10c-8 0-12 20-20 20-5 0-9-4-9-10Z" fill="none" stroke="#5B4F7E" stroke-width="2.8" stroke-linejoin="round" transform="translate(-5 0)"/></svg>
+        <h3>Tuya para siempre</h3>
+        <p>No vence en enero: en temporada luce navideña y el resto del año la usas con el estilo normal de tu marca.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA -->
+  <section class="wrap sec" id="como">
+    <div class="sec-head">
+      <p class="serif-caps">El recorrido de tu clienta</p>
+      <h2 class="h2">Así reserva una clienta</h2>
+    </div>
+    <ol class="flujo">
+      <li><div class="orb"><svg viewBox="0 0 24 24" fill="none" stroke="#5B4F7E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h11a3 3 0 0 1 3 3v11H7a3 3 0 0 1-3-3Z"/><path d="M8 9h6M8 13h4"/></svg></div><b>Catálogo y políticas</b><span>Conoce tus servicios y reglas</span></li>
+      <li><div class="orb"><svg viewBox="0 0 24 24" fill="none" stroke="#5B4F7E" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div><b>Semana</b><span>Elige cuándo quiere venir</span></li>
+      <li><div class="orb"><svg viewBox="0 0 24 24" fill="none" stroke="#5B4F7E" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></div><b>Artista</b><span>Escoge con quién</span></li>
+      <li><div class="orb"><svg viewBox="0 0 24 24" fill="none" stroke="#5B4F7E" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><b>Día y hora</b><span>Solo ve lo disponible</span></li>
+      <li><div class="orb"><svg viewBox="0 0 24 24" fill="none" stroke="#5B4F7E" stroke-width="1.8" stroke-linecap="round"><path d="M4 20l4-1 11-11-3-3L5 16Z"/></svg></div><b>Su nombre</b><span>Y acepta tus políticas</span></li>
+      <li class="final"><div class="orb"><svg viewBox="0 0 24 24" fill="none" stroke="#3B3355" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4Z"/><path d="M9 10l2 2 4-4"/></svg></div><b>Tu WhatsApp</b><span>Llega con todo listo para confirmar</span></li>
+    </ol>
+  </section>
+
+  <!-- DEMO -->
+  <section class="wrap sec" id="demo">
+    <div class="sec-head">
+      <p class="serif-caps">Prototipo interactivo</p>
+      <h2 class="h2">Pruébala tú misma</h2>
+      <p class="lead">Mira cómo reserva una clienta o toca la pantalla para hacerlo tú. Al lado está el panel de tu equipo: reserva un horario, revisa las clientas, cambia horarios y artistas, o pasa la agenda del estilo navideño al de todo el año. Todo se ve al instante en el celular.</p>
+    </div>
+    <div class="demo-zona">
+      <div class="demo-col">
+        <div class="telefono" id="telefono">
+          <div class="pantalla" id="pantalla">
+            <div class="historias" id="historias" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="d-scroll" id="d-scroll"></div>
+            <div class="cursor" id="cursor" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="modo" id="modo" role="status" aria-live="polite"></div>
+        <p class="firma">Prototipo by <b>Marypaz Cadavid</b></p>
+        <div class="controles">
+          <button class="btn btn-osc btn-sm" id="btn-demo" type="button">Ver demo</button>
+          <button class="btn btn-holo btn-sm" id="btn-probar" type="button">Probar yo</button>
+        </div>
+      </div>
+      <div class="panel" id="panel"></div>
+    </div>
+  </section>
+
+  <!-- AVISO -->
+  <section class="wrap sec">
+    <div class="aviso">
+      <svg viewBox="0 0 90 90" aria-hidden="true"><circle cx="45" cy="45" r="40" fill="url(#hg)"/><circle cx="45" cy="45" r="40" fill="none" stroke="#fff" stroke-width="3"/><path d="M45 24v26" stroke="#5B4F7E" stroke-width="6" stroke-linecap="round"/><circle cx="45" cy="63" r="4" fill="#C9BEF0"/></svg>
+      <div>
+        <h3>Importante: la agenda no reserva sola</h3>
+        <p>Esta agenda organiza las solicitudes, pero no es un agendamiento formal. Alguien de tu equipo debe recibir los mensajes en WhatsApp, verificar que la hora sí esté disponible y reservarla en el panel.</p>
+        <p>En esta temporada te recomendamos pedir un abono para separar cada cita. Así solo bloqueas horarios de clientas que de verdad van a llegar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECIO -->
+  <section class="wrap sec" id="precio">
+    <div class="sec-head">
+      <p class="serif-caps">Lote de prueba</p>
+      <h2 class="h2">Precio especial para las primeras 5</h2>
+    </div>
+    <div class="precio-zona">
+      <article class="precio">
+        <p class="serif-caps">Agenda completa · tuya para siempre</p>
+        <h3 id="precio-titulo">Precio de obsequio navideño para las primeras 5</h3>
+        <div class="cifra holo-txt" id="precio-promo">$250.000</div>
+        <ul class="escala">
+          <li><span>Hasta el 30 de noviembre</span><b>$550.000</b></li>
+          <li><span>Desde el 1 de diciembre</span><b>$850.000</b></li>
+        </ul>
+        <div class="cupos" id="cupos" aria-hidden="true"></div>
+        <p class="cupos-txt" id="cupos-txt"></p>
+        <a class="btn btn-osc cta-wa" id="cta-precio" data-servicio="Agenda navideña" href="#" target="_blank" rel="noopener">Separar mi cupo por WhatsApp</a>
+      </article>
+      <article class="calc">
+        <h3>Tu agenda se paga con los abonos</h3>
+        <label for="abono">Valor del abono por cita <output id="abono-txt">$20.000</output></label>
+        <input id="abono" type="range" min="10000" max="50000" step="5000" value="20000">
+        <div class="calc-res">
+          <div class="n" id="calc-n">13</div>
+          <div>
+            <p id="calc-txt">Con abonos de $20.000, las primeras 13 clientas que abonen ya cubren tu agenda especial de $250.000.</p>
+            <div class="clientas" id="clientas" aria-hidden="true"></div>
+          </div>
+        </div>
+        <small id="calc-reg">A $550.000 serían 28 clientas, y desde el 1 de diciembre ($850.000), 43.</small>
+      </article>
+    </div>
+  </section>
+
+  <!-- ENTREGABLES -->
+  <section class="wrap sec" id="entregables">
+    <div class="sec-head">
+      <p class="serif-caps">Resumen</p>
+      <h2 class="h2">Esto es lo que recibes</h2>
+    </div>
+    <ol class="entregables">
+      <li><i>1</i><div><b>Página de reservas</b><span>Con catálogo, políticas, semanas, artistas, días y horas.</span></div></li>
+      <li><i>2</i><div><b>Mensaje automático a WhatsApp</b><span>Nombre de la clienta, artista, día y hora en un solo mensaje.</span></div></li>
+      <li><i>3</i><div><b>Panel privado para tu equipo</b><span>Agenda por semana, clientas, horarios, artistas y ajustes de la portada.</span></div></li>
+      <li><i>4</i><div><b>Clientas con historial</b><span>Ficha de cada clienta con sus datos y procedimientos.</span></div></li>
+      <li><i>5</i><div><b>Personalización de marca</b><span>Logo, colores y tipografías de tu negocio.</span></div></li>
+      <li><i>6</i><div><b>Fotos navideñas editadas</b><span>De tus artistas, tu equipo o tu spa.</span></div></li>
+      <li><i>7</i><div><b>Tuya para siempre</b><span>Navideña en temporada y con el estilo de tu marca el resto del año.</span></div></li>
+      <li><i>8</i><div><b>Acompañamiento 100%</b><span>Durante toda la temporada, hasta el 31 de diciembre.</span></div></li>
+    </ol>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="wrap">
+    <div class="cierre">
+      <svg class="arbol-cierre izq" viewBox="0 0 160 200" aria-hidden="true"><use href="#arbol"/></svg>
+      <svg class="arbol-cierre der" viewBox="0 0 160 200" aria-hidden="true"><use href="#arbol"/></svg>
+      <p class="serif-caps">Redyz · Laboratorio estratégico &amp; creativo</p>
+      <p class="firma">By <b>Marypaz Cadavid</b></p>
+      <h2 class="h2">Que tu agenda trabaje mientras tú atiendes</h2>
+      <p id="cierre-txt">Escríbenos por WhatsApp y separa uno de los 5 cupos de obsequio navideño a $250.000.</p>
+      <a class="btn btn-osc cta-wa" id="cta-final" data-servicio="Agenda navideña" href="#" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<main id="pag-encuesta" data-pagina="encuesta" hidden>
+  <section class="wrap" style="padding-top:10px"><a class="volver-l" href="#servicios">‹ Volver a todos los servicios</a></section>
+
+  <section class="wrap e-hero">
+    <div>
+      <p class="serif-caps">Fórmula 02 · Dura todo el año</p>
+      <h1>Encuesta de <span class="holo-txt">satisfacción</span> para tu marca</h1>
+      <p class="lead">Una página que tus clientas abren al salir de su cita para calificar su experiencia en menos de 2 minutos. Tú ves todo en una página privada de resultados y reconoces qué tan felices salen tus clientas, artista por artista.</p>
+      <div class="e-precio"><span class="grande">$200.000</span><span class="chip-p">Funciona todo el año</span><span class="chip-p holo">Regalo: estilo navideño</span></div>
+      <div class="hero-ctas" style="margin-top:22px">
+        <a class="btn btn-osc" href="#e-prueba">Probar el prototipo</a>
+        <a class="btn btn-holo cta-wa" data-servicio="Encuesta de satisfacción" href="#" target="_blank" rel="noopener">La quiero</a>
+      </div>
+      <p class="firma" style="margin-top:14px">Diseñada by <b>Marypaz Cadavid</b> · Redyz</p>
+    </div>
+    <svg viewBox="0 0 420 380" aria-hidden="true" style="width:100%;max-width:440px;justify-self:center;overflow:visible">
+      <g class="flota" filter="url(#sombra)">
+        <rect x="90" y="40" width="240" height="300" rx="34" fill="#fff"/>
+        <rect x="90" y="40" width="240" height="300" rx="34" fill="none" stroke="url(#hg)" stroke-width="6"/>
+        <text x="210" y="96" text-anchor="middle" font-family="Unbounded,sans-serif" font-weight="800" font-size="20" fill="#3B3355">¿Cómo te sentiste?</text>
+        <g font-size="34" text-anchor="middle" fill="#F2A6C9"><text x="140" y="150">★</text><text x="175" y="150">★</text><text x="210" y="150">★</text><text x="245" y="150">★</text><text x="280" y="150" fill="#e2dcef">★</text></g>
+        <rect x="120" y="176" width="180" height="12" rx="6" fill="#ece7f7"/><rect x="120" y="176" width="150" height="12" rx="6" fill="url(#hg)"/>
+        <rect x="120" y="202" width="180" height="12" rx="6" fill="#ece7f7"/><rect x="120" y="202" width="164" height="12" rx="6" fill="url(#hg2)"/>
+        <rect x="120" y="228" width="180" height="12" rx="6" fill="#ece7f7"/><rect x="120" y="228" width="128" height="12" rx="6" fill="url(#hg)"/>
+        <rect x="120" y="270" width="180" height="40" rx="20" fill="url(#hg)"/>
+        <text x="210" y="296" text-anchor="middle" font-family="Manrope,sans-serif" font-weight="800" font-size="14" fill="#3B3355">Enviar mi encuesta</text>
+        <use href="#gorro" x="268" y="0" width="96" height="84" transform="rotate(16 316 42)"/>
+      </g>
+      <use href="#arbol" x="0" y="190" width="110" height="138" class="flota c"/>
+      <g class="flota b"><circle cx="372" cy="250" r="34" fill="none" stroke="url(#hg2)" stroke-width="24"/></g>
+      <use href="#chispa" x="350" y="70" width="40" height="40" fill="url(#cromo)" class="flota c"/>
+      <circle cx="62" cy="84" r="20" fill="url(#perlaRosa)" class="flota"/>
+    </svg>
+  </section>
+
+  <section class="wrap sec">
+    <div class="sec-head">
+      <p class="serif-caps">Cómo vive tu encuesta</p>
+      <h2 class="h2">Navideña de regalo, tu marca en 2027</h2>
+    </div>
+    <ol class="linea-tiempo">
+      <li><div class="orb">🎁</div><b>Hoy</b><span>La entregamos personalizada con tu logo y lista para enviar a tus clientas.</span></li>
+      <li><div class="orb">🎄</div><b>Temporada navideña</b><span>Te obsequiamos el estilo navideño y lo mantienes hasta cuando tú quieras.</span></li>
+      <li><div class="orb">✨</div><b>2027</b><span>Cambia al estilo normal de tu marca: tus colores, tipografías y fotos.</span></li>
+      <li><div class="orb">📈</div><b>Todo el año</b><span>Sigue recogiendo opiniones y tú ves cómo cambia la satisfacción mes a mes.</span></li>
+    </ol>
+  </section>
+
+  <section class="wrap sec" id="e-prueba">
+    <div class="sec-head">
+      <p class="serif-caps">Prototipo interactivo</p>
+      <h2 class="h2">Respóndela como una clienta</h2>
+      <p class="lead">Llena la encuesta en el celular y mira cómo tu respuesta aparece en la página privada de resultados. Cambia el estilo para ver la versión navideña y la versión 2027 de tu marca.</p>
+    </div>
+    <div class="e-demo">
+      <div class="demo-col">
+        <div class="tema-sw" role="group" aria-label="Estilo de la encuesta"><button type="button" class="on" data-tema="navidad">Estilo Navidad</button><button type="button" data-tema="marca">Estilo 2027 de tu marca</button></div>
+        <div class="telefono"><div class="pantalla navidad" id="e-pantalla"><div class="e-scroll" id="e-scroll"></div></div></div>
+        <p class="firma">Prototipo by <b>Marypaz Cadavid</b></p>
+      </div>
+      <div class="tablero" id="tablero"></div>
+    </div>
+  </section>
+
+  <section class="wrap sec">
+    <div class="sec-head">
+      <p class="serif-caps">Ingredientes de la fórmula</p>
+      <h2 class="h2">¿Qué incluye tu encuesta?</h2>
+    </div>
+    <ol class="entregables">
+      <li><i>1</i><div><b>Encuesta para tus clientas</b><span>Tres pasos cortos desde el celular: artista y servicios, estrellas por cada detalle, recomendación y comentarios.</span></div></li>
+      <li><i>2</i><div><b>Página privada de resultados</b><span>Respuestas generales e individuales, filtradas por artista y por periodo.</span></div></li>
+      <li><i>3</i><div><b>Satisfacción por detalle</b><span>Resultado, atención, puntualidad, limpieza, comodidad del espacio y relación calidad-precio.</span></div></li>
+      <li><i>4</i><div><b>Índice de recomendación</b><span>Del 0 al 10, cuántas clientas te recomendarían y cuántas volverían.</span></div></li>
+      <li><i>5</i><div><b>Comentarios para tus redes</b><span>La clienta autoriza si puedes compartir su comentario como testimonio.</span></div></li>
+      <li><i>6</i><div><b>Estilo navideño de regalo</b><span>Lo mantienes hasta cuando quieras durante la temporada.</span></div></li>
+      <li><i>7</i><div><b>Estilo de tu marca para 2027</b><span>Logo, colores, tipografías y fotos de tu negocio.</span></div></li>
+      <li><i>8</i><div><b>Funciona todo el año</b><span>Un solo pago de $200.000 y la usas en cada cita.</span></div></li>
+    </ol>
+  </section>
+
+  <section class="wrap">
+    <div class="cierre">
+      <svg class="arbol-cierre izq" viewBox="0 0 160 200" aria-hidden="true"><use href="#arbol"/></svg>
+      <p class="serif-caps">Encuesta de satisfacción · $200.000</p>
+      <p class="firma">By <b>Marypaz Cadavid</b></p>
+      <h2 class="h2">Descubre qué tan felices salen tus clientas</h2>
+      <p>Escríbenos y la dejamos lista con tu marca y el estilo navideño de regalo.</p>
+      <a class="btn btn-osc cta-wa" data-servicio="Encuesta de satisfacción" href="#" target="_blank" rel="noopener">Pedir mi encuesta por WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <b class="cromo-txt">REDYZ</b><br>Laboratorio estratégico &amp; creativo · Medellín<br><span class="firma">By <b>Marypaz Cadavid</b></span>
+</footer>
+
+<script>
+/* ================== AJUSTES DE LA PROMO ================== */
+const REDYZ_WA = "573105085540";  // WhatsApp de Redyz
+const CUPOS_TOTALES = 5;
+// Contador: el lanzamiento empieza con 5 cupos y cada día se acaba uno.
+// 12 nov: 5 · 13 nov: 4 · 14 nov: 3 · 15 nov: 2 · 16 nov: 1 · desde el 17 nov: agotados.
+const INICIO_CUPOS = new Date(2026,10,12);
+const diasDesde = d => Math.floor((new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()) - d) / 86400000);
+const CUPOS_TOMADOS = Math.min(CUPOS_TOTALES, Math.max(0, diasDesde(INICIO_CUPOS)));
+const CUPOS_LIBRES = CUPOS_TOTALES - CUPOS_TOMADOS;
+const HAY_OBSEQUIO = CUPOS_LIBRES > 0;
+const PRECIO_PROMO = 250000, PRECIO_REGULAR = 550000, PRECIO_DIC = 850000;
+const precioActual = () => (new Date() < new Date(2026,11,1)) ? PRECIO_REGULAR : PRECIO_DIC;
+
+const $ = s => document.querySelector(s);
+const fmt = n => "$" + n.toLocaleString("es-CO");
+const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function linkRedyz(servicio){
+  let msg;
+  if(servicio.startsWith("Agenda")) msg = HAY_OBSEQUIO ? "¡Hola Redyz! 🎄 Quiero adquirir la Agenda navideña. ¿Todavía hay cupos de obsequio a $250.000?" : "¡Hola Redyz! 🎄 Quiero adquirir la Agenda navideña para mi negocio.";
+  else if(servicio.startsWith("Encuesta")) msg = "¡Hola Redyz! ✨ Quiero adquirir la Encuesta de satisfacción para mi negocio.";
+  else if(servicio.startsWith("Calendario")) msg = "¡Hola Redyz! 🎄 Quiero que me avisen cuando estén disponibles los calendarios de adviento personalizables para mi marca.";
+  else msg = "¡Hola Redyz! ✨ Quiero adquirir el " + servicio + ". ¿Me envían la cotización?";
+  return "https://wa.me/" + REDYZ_WA + "?text=" + encodeURIComponent(msg);
+}
+document.querySelectorAll(".cta-wa").forEach(a => a.href = linkRedyz(a.dataset.servicio));
+
+/* cupos */
+(function(){
+  const libres = CUPOS_LIBRES;
+  $("#cupos").innerHTML = Array.from({length:CUPOS_TOTALES},(_,i)=>`<i class="${i < CUPOS_TOMADOS ? "tomado" : ""}"></i>`).join("");
+  $("#cupos-txt").textContent = libres > 1 ? `Hoy quedan ${libres} de ${CUPOS_TOTALES} cupos a ${fmt(PRECIO_PROMO)} · cada día se acaba uno`
+    : libres === 1 ? `¡Último cupo a ${fmt(PRECIO_PROMO)}! Mañana se acaba el obsequio navideño`
+    : `Cupos de obsequio agotados. Precio actual: ${fmt(precioActual())}`;
+  if(libres === 0){
+    $("#precio-promo").textContent = fmt(precioActual());
+    $("#precio-titulo").textContent = "Los cupos de obsequio ya se agotaron";
+    $("#sello").innerHTML = `<em>Tuya para siempre</em> ${fmt(precioActual())}`;
+    $("#precio-card").innerHTML = `<b>${fmt(precioActual())}</b><span class="etiqueta">Tuya para siempre</span>`;
+    $("#cierre-txt").textContent = "Escríbenos por WhatsApp y empezamos tu agenda.";
+  }
+})();
+
+/* calculadora de abonos */
+function calc(){
+  const a = Number($("#abono").value);
+  const base = HAY_OBSEQUIO ? PRECIO_PROMO : precioActual();
+  const n = Math.ceil(base / a), nr = Math.ceil(PRECIO_REGULAR / a), nd = Math.ceil(PRECIO_DIC / a);
+  $("#abono-txt").textContent = fmt(a);
+  $("#calc-n").textContent = n;
+  $("#calc-txt").textContent = `Con abonos de ${fmt(a)}, las primeras ${n} clientas que abonen ya cubren tu agenda${HAY_OBSEQUIO ? " especial" : ""} de ${fmt(base)}.`;
+  $("#calc-reg").textContent = `A ${fmt(PRECIO_REGULAR)} serían ${nr} clientas, y desde el 1 de diciembre (${fmt(PRECIO_DIC)}), ${nd}.`;
+  $("#clientas").innerHTML = "<i></i>".repeat(n);
+}
+$("#abono").addEventListener("input", calc); calc();
+
+/* ================== DEMO: DATOS DE EJEMPLO ================== */
+const DIAS_C = ["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"];
+const DIAS_N = ["domingo","lunes","martes","miércoles","jueves","viernes","sábado"];
+const diasDic = (d0,n) => Array.from({length:n},(_,i)=>d0+i);
+const SEM = [
+  {id:"s1", t:"Semana 1", r:"7 – 12 dic",  tag:"Semana de velitas", d:diasDic(7,6)},
+  {id:"s2", t:"Semana 2", r:"14 – 19 dic", tag:"Llegan las novenas", d:diasDic(14,6)},
+  {id:"s3", t:"Semana 3", r:"21 – 24 dic", tag:"Lista para Nochebuena", d:diasDic(21,4)},
+  {id:"s4", t:"Semana 4", r:"28 – 30 dic", tag:"Brilla en Año Nuevo", d:diasDic(28,3)}
+];
+const ARTS = [
+  {id:"vale", n:"Valeria", f:"Pestañas pelo a pelo", c:"linear-gradient(135deg,#FDE6F1,#EFE8FD)", on:true},
+  {id:"cami", n:"Camila",  f:"Cejas y lifting",      c:"linear-gradient(135deg,#DDF7F6,#EFE8FD)", on:true},
+  {id:"dani", n:"Daniela", f:"Uñas navideñas",       c:"linear-gradient(135deg,#FFF7E8,#FDE4F0)", on:true}
+];
+const COLORES_ART = ["linear-gradient(135deg,#FDE6F1,#EFE8FD)","linear-gradient(135deg,#DDF7F6,#EFE8FD)","linear-gradient(135deg,#FFF7E8,#FDE4F0)","linear-gradient(135deg,#EFE8FD,#DDF7F6)"];
+const HORAS = [480,570,660,840,930,1020];
+const HORAS_TODAS = [480,570,660,750,840,930,1020,1110];
+const NEG = {nombre:"TU SPA", t1:"Esta Navidad", t2:"brillarás más", sub:"Reserva tu cita con nuestras artistas.", temporada:"navidad"};
+const navidad = () => NEG.temporada === "navidad";
+const SERVICIOS = [["Pestañas pelo a pelo",90000],["Lifting de pestañas",70000],["Diseño de cejas",45000],["Uñas navideñas",50000]];
+const POLITICAS = [
+  ["Abono","Separas tu cita con un abono de $20.000. Se confirma solo por WhatsApp."],
+  ["Puntualidad","Llega 5 minutos antes de tu cita."],
+  ["Cambios","Avísanos con 24 horas de anticipación para reagendar."]
+];
+const fechaTxt = d => { const f = new Date(2026,11,d); return DIAS_N[f.getDay()] + " " + d + " de diciembre"; };
+const horaTxt = m => { const h=Math.floor(m/60), mi=m%60, h12=((h+11)%12)+1; return h12 + ":" + String(mi).padStart(2,"0") + " " + (h<12?"a.m.":"p.m."); };
+const K = (a,d,h) => a + "|" + d + "|" + h;
+const reservas = new Set();
+const citas = {};                       // horario -> {cl, proc}
+const HD = {};                          // horas habilitadas por artista y día
+const cerrados = new Set(["dani|19","vale|24","cami|24"]);
+const horasDe = (a,d) => HD[a + "|" + d] || HORAS;
+const CL = [
+  {id:"c1", n:"Laura Gómez",     tel:"300 412 7781", cumple:"14 de marzo",    notas:"Prefiere curvatura C y citas en la mañana.", hist:[{f:"28 oct", proc:"Pestañas pelo a pelo", art:"vale"},{f:"30 sep", proc:"Retoque de pestañas", art:"vale"}]},
+  {id:"c2", n:"Sofía Restrepo",  tel:"311 228 9043", cumple:"2 de julio",     notas:"Le gusta el diseño de cejas natural.",        hist:[{f:"5 nov", proc:"Diseño de cejas", art:"cami"}]},
+  {id:"c3", n:"Juliana Arango",  tel:"315 667 1209", cumple:"21 de diciembre", notas:"Cumpleaños en temporada: ofrecer detalle.",  hist:[{f:"19 oct", proc:"Uñas", art:"dani"},{f:"12 sep", proc:"Uñas", art:"dani"}]},
+  {id:"c4", n:"Mariana López",   tel:"304 990 3312", cumple:"9 de mayo",      notas:"",                                            hist:[{f:"1 nov", proc:"Lifting de pestañas", art:"cami"}]},
+  {id:"c5", n:"Valentina Ruiz",  tel:"320 154 8876", cumple:"30 de agosto",   notas:"Viene con su mamá.",                         hist:[]}
+];
+let nSeed = 0;
+ARTS.forEach((a,ai)=>SEM.forEach(s=>s.d.forEach(d=>HORAS.forEach((h,hi)=>{ if((ai*5 + d*3 + hi*7) % 6 === 0){ const k = K(a.id,d,h); reservas.add(k); if(nSeed % 3 !== 2){ const c = CL[nSeed % CL.length]; citas[k] = {cl:c.id, proc:SERVICIOS[(ai+hi) % SERVICIOS.length][0]}; } nSeed++; } }))));
+const cerrado = (a,d) => cerrados.has(a + "|" + d);
+const libres = (a,d) => cerrado(a,d) ? 0 : horasDe(a,d).filter(h=>!reservas.has(K(a,d,h))).length;
+const clienta = id => CL.find(c=>c.id===id);
+const art = id => ARTS.find(x=>x.id===id);
+const sem = id => SEM.find(x=>x.id===id);
+
+/* ================== DEMO: TELÉFONO ================== */
+const D = {v:"inicio", sem:null, art:null, dia:null, hora:null, nombre:"", serv:"", acepto:false, modal:null};
+const ORDEN = ["inicio","artistas","agenda","datos","wa"];
+const scroller = $("#d-scroll"), pantalla = $("#pantalla");
+
+function avatar(a){ return `<span class="d-av"><i style="background:${a.c}">${esc(a.n[0])}</i>${navidad() ? `<svg class="d-gorro" viewBox="0 0 100 86" aria-hidden="true"><use href="#gorro"/></svg>` : ""}</span>`; }
+function barra(volver){ return `<div class="d-top"><button class="d-volver" data-a="ir" data-v="${volver}">‹ Volver</button><span class="d-logo-mini">${esc(NEG.nombre)}</span></div>`; }
+function listoEnviar(){ return D.nombre.trim().length >= 2 && D.acepto; }
+
+function vista(){
+  if(D.v === "inicio") return `
+    <div class="d-hero">
+      ${navidad() ? `<svg viewBox="0 0 160 200" style="position:absolute;right:6px;bottom:4px;width:54px;height:68px" aria-hidden="true"><use href="#arbol"/></svg><svg viewBox="0 0 100 86" style="position:absolute;left:8px;top:8px;width:40px;height:34px;transform:rotate(-16deg)" aria-hidden="true"><use href="#gorro"/></svg>` : ""}<div class="d-logo">${esc(NEG.nombre)}<small>Ejemplo de agenda · Redyz</small></div>
+      <p class="d-eyebrow">${navidad() ? "Agendas navideñas 2026" : "Agenda online"}</p>
+      <h3 class="d-tit">${esc(NEG.t1)}<br><em class="holo-txt">${esc(NEG.t2)}</em></h3>
+      <p class="d-txt">${esc(NEG.sub)}</p>
+      <div class="d-row"><button class="d-btn" data-a="modal" data-m="catalogo">Ver catálogo</button><button class="d-btn ghost" data-a="modal" data-m="politicas">Políticas</button></div>
+    </div>
+    <h4 class="d-h">Elige tu semana</h4>
+    <div class="d-semanas">${SEM.map(s=>`<button class="d-sem" data-a="sem" data-id="${s.id}"><small>${s.t}</small><b>${s.r}</b><span>${s.tag}</span></button>`).join("")}</div>`;
+
+  if(D.v === "artistas"){ const s = sem(D.sem); return `${barra("inicio")}
+    <p class="d-eyebrow" style="margin:0">${s.t} · ${s.r}</p>
+    <h4 class="d-h" style="margin-top:4px">¿Con quién quieres brillar?</h4>
+    <div class="d-arts">${ARTS.filter(x=>x.on).map(a=>`<button class="d-art" data-a="art" data-id="${a.id}">${avatar(a)}<b>${a.n}</b><span>${a.f}</span><u>Ver su agenda ›</u></button>`).join("")}</div>`; }
+
+  if(D.v === "agenda"){ const s = sem(D.sem), a = art(D.art);
+    if(D.dia == null || libres(a.id,D.dia) === 0){ const d = s.d.find(x=>libres(a.id,x) > 0); D.dia = d == null ? null : d; }
+    return `${barra("artistas")}
+    <div class="d-perfil">${avatar(a)}<div><b>${a.n}</b><span>${s.t} · ${s.r}</span></div></div>
+    <div class="d-card"><h4>Elige tu día</h4><div class="d-dias">${s.d.map(d=>{ const f = new Date(2026,11,d), l = libres(a.id,d);
+      return `<button class="d-dia ${d===D.dia?"sel":""}" data-a="dia" data-id="${d}" ${l===0?"disabled":""}><small>${DIAS_C[f.getDay()]}</small><b>${d}</b><span>${cerrado(a.id,d)?"Cerrado":l===0?"Agotado":l+" libres"}</span></button>`;}).join("")}</div></div>
+    <div class="d-card"><h4>Elige tu hora</h4>${D.dia==null?`<p class="d-nota">Esta semana ${a.n} no tiene espacios.</p>`:`
+      <div class="d-horas">${horasDe(a.id,D.dia).map(h=>{ const r = reservas.has(K(a.id,D.dia,h)); return `<button class="d-hora ${D.hora===h?"sel":""}" data-a="hora" data-h="${h}" ${r?"disabled":""}>${horaTxt(h)}</button>`;}).join("")}</div>
+      <div class="d-ley"><span><i style="background:#F6F4FB"></i>Libre</span><span><i style="background:#f1eef6"></i>Reservada</span></div>`}</div>
+    <button class="d-principal" data-a="seguir" ${D.dia!=null&&D.hora!=null?"":"disabled"}>Continuar con mi cita ›</button>
+    <p class="d-nota">Horarios sujetos a confirmación por WhatsApp</p>`; }
+
+  if(D.v === "datos"){ const s = sem(D.sem), a = art(D.art); return `${barra("agenda")}
+    <h4 class="d-h" style="margin-top:0">¡Ya casi!</h4>
+    <div class="d-card d-res"><span>Artista: <b>${a.n}</b></span><span>Día: <b>${fechaTxt(D.dia)}</b></span><span>Hora: <b>${horaTxt(D.hora)}</b></span></div>
+    <label class="d-campo" for="d-nombre">Tu nombre<input id="d-nombre" type="text" placeholder="¿Cómo te llamas?" value="${D.nombre.replace(/"/g,"&quot;")}" autocomplete="off"></label>
+    <div class="d-campo">Servicio<div class="d-chips">${SERVICIOS.map((sv,i)=>`<button class="d-chip ${D.serv===sv[0]?"sel":""}" data-a="serv" data-i="${i}">${sv[0]}</button>`).join("")}</div></div>
+    <div class="d-aviso"><b>Importante:</b> tu cita se confirma únicamente por WhatsApp, después de tu abono de $20.000.</div>
+    <label class="d-acepto" for="d-acepto"><input id="d-acepto" type="checkbox" data-a="acepto" ${D.acepto?"checked":""}> Leí y acepto las políticas</label>
+    <button class="d-principal" id="d-enviar" data-a="enviar" ${listoEnviar()?"":"disabled"}>Enviar mi cita por WhatsApp</button>`; }
+
+  if(D.v === "wa"){ const a = art(D.art);
+    const msg = `¡Hola! Quiero agendar mi cita${navidad() ? " navideña 🎄" : " ✨"}\n\n👤 Nombre: ${esc(D.nombre.trim())}\n💅 Servicio: ${esc(D.serv || "Por definir")}\n👩‍🎨 Artista: ${a.n}\n🗓️ Día: ${fechaTxt(D.dia)}\n⏰ Hora: ${horaTxt(D.hora)}\n\nEntiendo que mi cita se confirma después del abono de $20.000.`;
+    return `<div class="d-wa"><div class="d-wa-top"><i></i><div><b>${esc(NEG.nombre)}</b><span>en línea</span></div></div>
+      <div class="d-wa-chat"><div class="burbuja">${msg}<small>9:41 ✓✓</small></div></div>
+      <p class="d-wa-nota">En tu agenda real se abre el WhatsApp de tu spa con este mensaje listo.</p>
+      <div style="padding:0 12px 16px"><button class="d-principal" data-a="reiniciar">Volver a empezar</button></div></div>`; }
+  return "";
+}
+function esc(s){ return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+
+function modalHTML(){
+  if(D.modal === "catalogo") return `<div class="d-modal" data-a="cerrar-fondo"><div class="d-hoja"><h4>Catálogo <button data-a="cerrar" aria-label="Cerrar">×</button></h4>${SERVICIOS.map(s=>`<div class="d-item"><span>${s[0]}</span><b>${fmt(s[1])}</b></div>`).join("")}<p class="d-nota">Precios de ejemplo</p></div></div>`;
+  if(D.modal === "politicas") return `<div class="d-modal" data-a="cerrar-fondo"><div class="d-hoja"><h4>Políticas <button data-a="cerrar" aria-label="Cerrar">×</button></h4>${POLITICAS.map(p=>`<div class="d-pol"><b>${esc(p[0])}</b>${esc(p[1])}</div>`).join("")}</div></div>`;
+  return "";
+}
+function renderTel(mantener){
+  const y = scroller.scrollTop;
+  scroller.innerHTML = vista();
+  const viejo = pantalla.querySelector(".d-modal"); if(viejo) viejo.remove();
+  if(D.modal) pantalla.insertAdjacentHTML("beforeend", modalHTML());
+  scroller.scrollTop = mantener ? y : 0;
+  const idx = ORDEN.indexOf(D.v);
+  document.querySelectorAll("#historias span").forEach((s,i)=>s.classList.toggle("on", i <= idx));
+}
+function ir(v){ D.v = v; renderTel(false); }
+function reiniciar(){ Object.assign(D,{v:"inicio",sem:null,art:null,dia:null,hora:null,nombre:"",serv:"",acepto:false,modal:null}); renderTel(false); }
+
+$("#telefono").addEventListener("click", e=>{
+  const b = e.target.closest("[data-a]"); if(!b) return;
+  const a = b.dataset.a;
+  if(a === "ir") ir(b.dataset.v);
+  else if(a === "modal"){ D.modal = b.dataset.m; renderTel(true); }
+  else if(a === "cerrar" || (a === "cerrar-fondo" && e.target === b)){ D.modal = null; renderTel(true); }
+  else if(a === "sem"){ D.sem = b.dataset.id; D.art = null; D.dia = null; D.hora = null; P.sem = D.sem; P.slot = null; renderPanel(); ir("artistas"); }
+  else if(a === "art"){ D.art = b.dataset.id; D.dia = null; D.hora = null; P.art = D.art; P.slot = null; renderPanel(); ir("agenda"); }
+  else if(a === "dia"){ D.dia = Number(b.dataset.id); D.hora = null; renderTel(true); }
+  else if(a === "hora"){ D.hora = Number(b.dataset.h); renderTel(true); }
+  else if(a === "seguir"){ if(D.dia != null && D.hora != null) ir("datos"); }
+  else if(a === "serv"){ D.serv = SERVICIOS[Number(b.dataset.i)][0]; renderTel(true); }
+  else if(a === "acepto"){ D.acepto = b.checked; actualizarEnviar(); }
+  else if(a === "enviar"){ if(listoEnviar()) ir("wa"); }
+  else if(a === "reiniciar") reiniciar();
+});
+$("#telefono").addEventListener("input", e=>{ if(e.target.id === "d-nombre"){ D.nombre = e.target.value; actualizarEnviar(); } });
+function actualizarEnviar(){ const b = $("#d-enviar"); if(b) b.disabled = !listoEnviar(); }
+
+/* ================== DEMO: PANEL DE TU EQUIPO ================== */
+const P = {tab:"agenda", art:"cami", sem:"s2", slot:null, cl:"c1", q:"", nuevaCl:false, hArt:"cami", hSem:"s2"};
+const PTABS = [["agenda","Agenda"],["clientas","Clientas"],["horarios","Horarios"],["artistas","Artistas"],["ajustes","Portada y ajustes"]];
+const diaTxt = d => { const f = new Date(2026,11,d); return DIAS_C[f.getDay()] + " " + d + " dic"; };
+function chipsSem(k){ return SEM.map(x=>`<button type="button" class="p-chip ${x.id===P[k]?"on":""}" data-p="${k}" data-id="${x.id}">${x.r}</button>`).join(""); }
+function chipsArt(k){ return ARTS.map(x=>`<button type="button" class="p-chip ${x.id===P[k]?"on":""} ${x.on?"":"apagada"}" data-p="${k}" data-id="${x.id}">${esc(x.n)}</button>`).join(""); }
+function ensureArt(k){ if(!art(P[k])) P[k] = ARTS[0].id; }
+
+function pAgenda(){
+  ensureArt("art");
+  const s = sem(P.sem), a = art(P.art);
+  const filas = HORAS_TODAS.filter(h => s.d.some(d => horasDe(a.id,d).includes(h)));
+  const total = s.d.reduce((n,d)=>n + horasDe(a.id,d).filter(h=>reservas.has(K(a.id,d,h))).length, 0);
+  let caja = "";
+  if(P.slot){
+    const {d,h} = P.slot, k = K(a.id,d,h);
+    if(reservas.has(k)){
+      const c = citas[k], cl = c && clienta(c.cl);
+      caja = `<div class="p-caja"><h4>${cl ? "Cita reservada" : "Horario bloqueado"} · ${diaTxt(d)} · ${horaTxt(h)}</h4>
+        ${cl ? `<p><b>${esc(cl.n)}</b> · ${esc(c.proc)} con ${esc(a.n)}</p>` : `<p>Este horario no se muestra a las clientas.</p>`}
+        <div class="p-fila">${cl ? `<button type="button" class="p-btn" data-p="ver-cl" data-id="${cl.id}">Ver ficha de la clienta</button>` : ""}<button type="button" class="p-btn suave" data-p="liberar">Liberar horario</button><button type="button" class="p-btn suave" data-p="cerrar-caja">Cerrar</button></div></div>`;
+    } else {
+      caja = `<div class="p-caja"><h4>Reservar · ${esc(a.n)} · ${diaTxt(d)} · ${horaTxt(h)}</h4>
+        <label class="p-campo" for="p-res-cl">Clienta
+          <select id="p-res-cl"><option value="">Nueva clienta…</option>${CL.map(c=>`<option value="${c.id}">${esc(c.n)}</option>`).join("")}</select></label>
+        <label class="p-campo" for="p-res-nueva">Nombre (si es nueva)<input id="p-res-nueva" type="text" placeholder="Nombre de la clienta" autocomplete="off"></label>
+        <label class="p-campo" for="p-res-proc">Procedimiento
+          <select id="p-res-proc">${SERVICIOS.map(x=>`<option>${x[0]}</option>`).join("")}</select></label>
+        <div class="p-fila"><button type="button" class="p-btn" data-p="reservar">Reservar</button><button type="button" class="p-btn suave" data-p="bloquear">Bloquear sin clienta</button><button type="button" class="p-btn suave" data-p="cerrar-caja">Cancelar</button></div>
+        <p class="p-msg" id="p-res-msg" role="status"></p></div>`;
+    }
+  }
+  return `<p class="ayuda">Toca un horario libre para reservarlo con los datos de la clienta, o uno reservado para ver la cita o liberarlo.</p>
+    <div class="p-lbl">Semana</div><div class="p-fila">${chipsSem("sem")}</div>
+    <div class="p-lbl">Artista</div><div class="p-fila">${chipsArt("art")}</div>
+    <div class="p-resumen">${total} citas esta semana con ${esc(a.n)}${a.on ? "" : " · oculta para las clientas"}</div>
+    <div class="p-tabla"><table>
+      <thead><tr><th scope="col"><span class="sr">Hora</span></th>${s.d.map(d=>`<th scope="col">${DIAS_C[new Date(2026,11,d).getDay()]}<b>${d}</b></th>`).join("")}</tr></thead>
+      <tbody>${filas.map(h=>`<tr><td class="h">${horaTxt(h)}</td>${s.d.map(d=>{
+        if(cerrado(a.id,d)) return `<td><span class="celda cerrado">Cerrado</span></td>`;
+        if(!horasDe(a.id,d).includes(h)) return `<td><span class="celda vacia">—</span></td>`;
+        const k = K(a.id,d,h), r = reservas.has(k), c = citas[k], sel = P.slot && P.slot.d===d && P.slot.h===h;
+        const txt = r ? (c ? esc(clienta(c.cl).n.split(" ")[0]) : "Bloqueado") : "Libre";
+        return `<td><button type="button" class="celda ${r?"res":""} ${sel?"sel":""}" data-p="celda" data-d="${d}" data-h="${h}">${txt}</button></td>`;}).join("")}</tr>`).join("")}</tbody>
+    </table></div>${caja}`;
+}
+
+function pClientas(){
+  const c = clienta(P.cl) || CL[0];
+  const proximas = Object.entries(citas).filter(([k,v])=>v.cl===c.id).map(([k,v])=>{ const [aid,d,h] = k.split("|"); return {d:Number(d), h:Number(h), proc:v.proc, art:aid}; }).sort((x,y)=>x.d-y.d || x.h-y.h);
+  return `<p class="ayuda">Cada reserva queda en la ficha de la clienta. Busca por nombre o celular.</p>
+    <div class="crm">
+      <div>
+        <label class="p-campo" for="p-buscar">Buscar clienta<input id="p-buscar" type="search" value="${esc(P.q)}" placeholder="Nombre o celular" autocomplete="off"></label>
+        <div class="cl-lista" id="cl-lista">${listaCl()}</div>
+        ${P.nuevaCl ? `<div class="p-caja"><h4>Nueva clienta</h4>
+          <label class="p-campo" for="p-nc-n">Nombre<input id="p-nc-n" type="text" autocomplete="off"></label>
+          <label class="p-campo" for="p-nc-t">Celular<input id="p-nc-t" type="tel" autocomplete="off"></label>
+          <div class="p-fila"><button type="button" class="p-btn" data-p="guardar-cl">Guardar</button><button type="button" class="p-btn suave" data-p="cancelar-cl">Cancelar</button></div><p class="p-msg" id="p-nc-msg" role="status"></p></div>`
+          : `<button type="button" class="p-btn suave" data-p="nueva-cl" style="margin-top:10px">+ Nueva clienta</button>`}
+      </div>
+      <div class="ficha">
+        <h4>${esc(c.n)}</h4>
+        <dl><dt>Celular</dt><dd>${esc(c.tel) || "—"}</dd><dt>Cumpleaños</dt><dd>${esc(c.cumple) || "—"}</dd><dt>Notas</dt><dd>${esc(c.notas) || "—"}</dd></dl>
+        <div class="p-lbl">Próximas citas</div>
+        ${proximas.length ? proximas.map(x=>`<div class="hist prox"><b>${diaTxt(x.d)} · ${horaTxt(x.h)}</b><span>${esc(x.proc)} con ${esc(art(x.art) ? art(x.art).n : "")}</span></div>`).join("") : `<p class="d-nota" style="text-align:left">Sin citas próximas.</p>`}
+        <div class="p-lbl">Historial de procedimientos</div>
+        ${c.hist.length ? c.hist.map(x=>`<div class="hist"><b>${esc(x.f)}</b><span>${esc(x.proc)} con ${esc(art(x.art) ? art(x.art).n : "")}</span></div>`).join("") : `<p class="d-nota" style="text-align:left">Todavía no tiene procedimientos.</p>`}
+      </div>
+    </div>`;
+}
+function listaCl(){
+  const q = P.q.trim().toLowerCase();
+  const l = CL.filter(c => !q || c.n.toLowerCase().includes(q) || c.tel.replace(/\s/g,"").includes(q.replace(/\s/g,"")));
+  return l.length ? l.map(c=>`<button type="button" class="cl-item ${c.id===P.cl?"on":""}" data-p="cl" data-id="${c.id}"><b>${esc(c.n)}</b><span>${esc(c.tel)}</span></button>`).join("") : `<p class="d-nota" style="text-align:left">No hay clientas con ese nombre.</p>`;
+}
+
+function pHorarios(){
+  ensureArt("hArt");
+  const s = sem(P.hSem), a = art(P.hArt);
+  return `<p class="ayuda">Elige qué días y horas ve cada artista. Lo que apagues desaparece de la agenda de las clientas.</p>
+    <div class="p-lbl">Semana</div><div class="p-fila">${chipsSem("hSem")}</div>
+    <div class="p-lbl">Artista</div><div class="p-fila">${chipsArt("hArt")}</div>
+    <div class="dias-ed">${s.d.map(d=>{ const c = cerrado(a.id,d), hs = horasDe(a.id,d);
+      return `<div class="dia-ed ${c?"cerrado":""}"><div class="dia-ed-top"><b>${diaTxt(d)}</b><button type="button" class="p-btn suave mini" data-p="dia" data-d="${d}">${c?"Abrir día":"Cerrar día"}</button></div>
+        <div class="p-fila">${HORAS_TODAS.map(h=>`<button type="button" class="ed-chip ${hs.includes(h)?"on":""}" data-p="hora" data-d="${d}" data-h="${h}" ${c?"disabled":""} aria-pressed="${hs.includes(h)}">${horaTxt(h)}</button>`).join("")}</div></div>`;}).join("")}</div>
+    <button type="button" class="p-btn" data-p="copiar-semana" style="margin-top:12px">Copiar el horario del primer día a toda la semana</button>`;
+}
+
+function pArtistas(){
+  return `<p class="ayuda">Agrega artistas, cambia su especialidad u ocúltalas de la agenda sin borrar sus citas.</p>
+    <div class="arts-ed">${ARTS.map(a=>`<div class="art-ed ${a.on?"":"apagada"}">${avatar(a)}
+      <div class="art-ed-datos"><b>${esc(a.n)}</b>
+        <label class="p-campo" for="p-f-${a.id}">Especialidad<input id="p-f-${a.id}" type="text" value="${esc(a.f)}" data-pi="frase" data-id="${a.id}" autocomplete="off"></label></div>
+      <button type="button" class="p-btn ${a.on?"suave":""} mini" data-p="toggle-art" data-id="${a.id}">${a.on?"Ocultar":"Mostrar"}</button></div>`).join("")}</div>
+    <div class="p-caja"><h4>Nueva artista</h4>
+      <label class="p-campo" for="p-na-n">Nombre<input id="p-na-n" type="text" autocomplete="off"></label>
+      <label class="p-campo" for="p-na-f">Especialidad<input id="p-na-f" type="text" placeholder="Ej. Pestañas volumen" autocomplete="off"></label>
+      <button type="button" class="p-btn" data-p="guardar-art">Agregar artista</button><p class="p-msg" id="p-na-msg" role="status"></p></div>`;
+}
+
+function pAjustes(){
+  return `<p class="ayuda">Cambia los textos de la portada, las políticas y el estilo de temporada. Mira el celular: se actualiza al instante.</p>
+    <div class="p-lbl">Estilo de la agenda</div>
+    <div class="p-fila"><button type="button" class="p-chip ${navidad()?"on":""}" data-p="temporada" data-v="navidad">Navidad</button><button type="button" class="p-chip ${navidad()?"":"on"}" data-p="temporada" data-v="anual">Todo el año (tu marca)</button></div>
+    <div class="aj-grid">
+      <label class="p-campo" for="p-aj-nombre">Nombre del negocio<input id="p-aj-nombre" type="text" value="${esc(NEG.nombre)}" data-pi="nombre" autocomplete="off"></label>
+      <label class="p-campo" for="p-aj-t1">Título, primera línea<input id="p-aj-t1" type="text" value="${esc(NEG.t1)}" data-pi="t1" autocomplete="off"></label>
+      <label class="p-campo" for="p-aj-t2">Título, segunda línea<input id="p-aj-t2" type="text" value="${esc(NEG.t2)}" data-pi="t2" autocomplete="off"></label>
+      <label class="p-campo" for="p-aj-sub">Frase de bienvenida<input id="p-aj-sub" type="text" value="${esc(NEG.sub)}" data-pi="sub" autocomplete="off"></label>
+    </div>
+    <div class="p-lbl">Políticas</div>
+    ${POLITICAS.map((x,i)=>`<label class="p-campo" for="p-pol-${i}">${esc(x[0])}<textarea id="p-pol-${i}" rows="2" data-pi="pol" data-i="${i}">${esc(x[1])}</textarea></label>`).join("")}`;
+}
+
+function renderPanel(){
+  const vistas = {agenda:pAgenda, clientas:pClientas, horarios:pHorarios, artistas:pArtistas, ajustes:pAjustes};
+  $("#panel").innerHTML = `
+    <div class="panel-head"><h3>Panel de tu equipo</h3><span>Página privada</span></div>
+    <nav class="p-tabs" aria-label="Secciones del panel">${PTABS.map(([k,t])=>`<button type="button" class="p-tab ${P.tab===k?"on":""}" data-p="tab" data-k="${k}" aria-current="${P.tab===k?"page":"false"}">${t}</button>`).join("")}</nav>
+    <div class="p-cuerpo">${vistas[P.tab]()}</div>`;
+}
+function ajustarTel(){
+  if(D.art && !(art(D.art) && art(D.art).on) && ["agenda","datos"].includes(D.v)){ D.v = "artistas"; D.art = null; }
+  if(D.art && D.dia != null && D.hora != null && (reservas.has(K(D.art,D.dia,D.hora)) || cerrado(D.art,D.dia) || !horasDe(D.art,D.dia).includes(D.hora))){ D.hora = null; if(D.v === "datos") D.v = "agenda"; }
+  renderTel(true);
+}
+function msgEn(id, t){ const m = document.getElementById(id); if(m) m.textContent = t; }
+
+$("#panel").addEventListener("click", e=>{
+  const b = e.target.closest("[data-p]"); if(!b || b.disabled) return;
+  const p = b.dataset.p, id = b.dataset.id;
+  if(p === "tab"){ P.tab = b.dataset.k; P.slot = null; }
+  else if(["sem","art","hSem","hArt"].includes(p)){ P[p] = id; P.slot = null; }
+  else if(p === "celda"){ P.slot = {d:Number(b.dataset.d), h:Number(b.dataset.h)}; }
+  else if(p === "cerrar-caja"){ P.slot = null; }
+  else if(p === "liberar"){ const k = K(P.art,P.slot.d,P.slot.h); reservas.delete(k); delete citas[k]; P.slot = null; }
+  else if(p === "bloquear"){ reservas.add(K(P.art,P.slot.d,P.slot.h)); P.slot = null; }
+  else if(p === "reservar"){
+    let cid = $("#p-res-cl").value; const nuevo = $("#p-res-nueva").value.trim(), proc = $("#p-res-proc").value;
+    if(!cid){ if(nuevo.length < 2){ msgEn("p-res-msg","Elige una clienta o escribe el nombre de la nueva."); return; }
+      cid = "c" + (CL.length + 1) + Date.now().toString(36).slice(-3); CL.push({id:cid, n:nuevo, tel:"", cumple:"", notas:"", hist:[]}); }
+    const k = K(P.art,P.slot.d,P.slot.h); reservas.add(k); citas[k] = {cl:cid, proc}; P.slot = null;
+  }
+  else if(p === "ver-cl"){ P.tab = "clientas"; P.cl = id; P.slot = null; }
+  else if(p === "cl"){ P.cl = id; }
+  else if(p === "nueva-cl"){ P.nuevaCl = true; }
+  else if(p === "cancelar-cl"){ P.nuevaCl = false; }
+  else if(p === "guardar-cl"){ const n = $("#p-nc-n").value.trim(); if(n.length < 2){ msgEn("p-nc-msg","Escribe el nombre de la clienta."); return; }
+    const nid = "c" + (CL.length + 1) + Date.now().toString(36).slice(-3); CL.push({id:nid, n, tel:$("#p-nc-t").value.trim(), cumple:"", notas:"", hist:[]}); P.cl = nid; P.nuevaCl = false; }
+  else if(p === "dia"){ const k = P.hArt + "|" + b.dataset.d; cerrados.has(k) ? cerrados.delete(k) : cerrados.add(k); }
+  else if(p === "hora"){ const k = P.hArt + "|" + b.dataset.d, h = Number(b.dataset.h); const hs = new Set(horasDe(P.hArt, Number(b.dataset.d))); hs.has(h) ? hs.delete(h) : hs.add(h); HD[k] = [...hs].sort((x,y)=>x-y); }
+  else if(p === "copiar-semana"){ const s = sem(P.hSem), base = horasDe(P.hArt, s.d[0]).slice(); s.d.forEach(d => HD[P.hArt + "|" + d] = base.slice()); }
+  else if(p === "toggle-art"){ const a = art(id); if(a.on && ARTS.filter(x=>x.on).length === 1) return; a.on = !a.on; }
+  else if(p === "guardar-art"){ const n = $("#p-na-n").value.trim(); if(n.length < 2){ msgEn("p-na-msg","Escribe el nombre de la artista."); return; }
+    const nid = "a" + Date.now().toString(36); ARTS.push({id:nid, n, f:$("#p-na-f").value.trim() || "Artista", c:COLORES_ART[ARTS.length % COLORES_ART.length], on:true}); }
+  else if(p === "temporada"){ NEG.temporada = b.dataset.v; if(NEG.temporada === "navidad"){ NEG.t1 = "Esta Navidad"; NEG.t2 = "brillarás más"; } else { NEG.t1 = "Reserva tu cita"; NEG.t2 = "en segundos"; } }
+  renderPanel(); ajustarTel();
+});
+$("#panel").addEventListener("input", e=>{
+  const t = e.target;
+  if(t.id === "p-buscar"){ P.q = t.value; $("#cl-lista").innerHTML = listaCl(); return; }
+  const k = t.dataset.pi; if(!k) return;
+  if(k === "frase"){ const a = art(t.dataset.id); if(a) a.f = t.value; }
+  else if(k === "pol"){ POLITICAS[Number(t.dataset.i)][1] = t.value; }
+  else NEG[k] = t.value;
+  renderTel(true);
+});
+
+/* ================== DEMO: REPRODUCCIÓN AUTOMÁTICA ================== */
+const cursor = $("#cursor");
+let corrida = 0, auto = false;
+const dormir = ms => new Promise(r=>setTimeout(r,ms));
+const vigente = id => { if(id !== corrida) throw new Error("detenido"); };
+function modo(){
+  $("#modo").innerHTML = auto ? "<b>Demo en reproducción</b> · toca la pantalla para probarla tú" : "<b>Ahora la estás probando tú</b> · navega como si fueras una clienta";
+}
+async function tocar(sel, id){
+  const el = pantalla.querySelector(sel); if(!el) throw new Error("sin destino");
+  const sr = scroller.getBoundingClientRect(); let er = el.getBoundingClientRect();
+  if(er.top < sr.top + 70 || er.bottom > sr.bottom - 20){
+    scroller.scrollTo({top: scroller.scrollTop + (er.top - sr.top) - sr.height * .35, behavior: reduce ? "auto" : "smooth"});
+    await dormir(600); vigente(id);
+  }
+  er = el.getBoundingClientRect(); const pr = pantalla.getBoundingClientRect();
+  cursor.classList.add("on");
+  cursor.style.transform = `translate(${er.left - pr.left + er.width/2}px,${er.top - pr.top + er.height/2}px)`;
+  await dormir(750); vigente(id);
+  cursor.classList.add("tap"); await dormir(170); vigente(id);
+  el.click(); await dormir(200); cursor.classList.remove("tap");
+}
+async function escribir(texto, id){
+  const inp = $("#d-nombre"); if(!inp) return;
+  for(const c of texto){ inp.value += c; D.nombre = inp.value; actualizarEnviar(); await dormir(95); vigente(id); }
+}
+async function reproducir(){
+  const id = ++corrida; auto = true; modo();
+  try{
+    reiniciar(); cursor.style.transform = "translate(150px,520px)";
+    await dormir(1300); vigente(id);
+    await tocar('[data-a="modal"][data-m="catalogo"]', id); await dormir(1500); vigente(id);
+    await tocar('[data-a="cerrar"]', id); await dormir(500); vigente(id);
+    await tocar('[data-a="sem"][data-id="s2"]', id); await dormir(900); vigente(id);
+    await tocar('[data-a="art"][data-id="cami"]', id); await dormir(900); vigente(id);
+    await tocar('[data-a="dia"][data-id="16"]:not([disabled])', id).catch(()=>{}); vigente(id); await dormir(600);
+    await tocar('.d-hora:not([disabled])', id); await dormir(700); vigente(id);
+    await tocar('[data-a="seguir"]', id); await dormir(900); vigente(id);
+    await tocar('#d-nombre', id); await escribir("Laura Gómez", id); await dormir(400);
+    await tocar('[data-a="serv"][data-i="0"]', id); await dormir(500); vigente(id);
+    await tocar('#d-acepto', id); await dormir(500); vigente(id);
+    await tocar('#d-enviar', id); cursor.classList.remove("on");
+    await dormir(5200); vigente(id);
+    reproducir();
+  }catch(err){
+    if(id === corrida){ auto = false; cursor.classList.remove("on","tap"); modo(); }
+  }
+}
+function detener(){ corrida++; auto = false; cursor.classList.remove("on","tap"); modo(); }
+$("#telefono").addEventListener("pointerdown", e=>{ if(e.isTrusted && auto) detener(); }, true);
+$("#btn-demo").addEventListener("click", ()=>{ scroller.scrollTop = 0; reproducir(); });
+$("#btn-probar").addEventListener("click", ()=>{ detener(); reiniciar(); });
+
+renderTel(false); renderPanel(); modo();
+
+/* ================== PÁGINA ENCUESTA ================== */
+const E_ASP = [["resultado","Resultado"],["atencion","Atención"],["puntualidad","Puntualidad"],["limpieza","Limpieza"],["espacio","Comodidad"],["precio","Calidad-precio"]];
+const E_SERV = ["Pestañas","Cejas","Lifting","Uñas"];
+const E_VOLV = ["¡Sí, segurísimo!","Tal vez","No"];
+const RESP = [
+  {art:"vale",g:5,a:{resultado:5,atencion:5,puntualidad:4,limpieza:5,espacio:5,precio:4},nps:10,v:0,c:"Me encantó cómo quedaron mis pestañas, súper naturales.",n:"Sofía"},
+  {art:"cami",g:5,a:{resultado:5,atencion:5,puntualidad:5,limpieza:5,espacio:4,precio:5},nps:9,v:0,c:"Camila es un amor, me explicó todos los cuidados.",n:"Juliana"},
+  {art:"dani",g:4,a:{resultado:4,atencion:5,puntualidad:3,limpieza:5,espacio:4,precio:4},nps:8,v:1,c:"Lindas las uñas, pero esperé un poquito.",n:"Mariana"},
+  {art:"vale",g:5,a:{resultado:5,atencion:5,puntualidad:5,limpieza:5,espacio:5,precio:5},nps:10,v:0,c:"El mejor lugar para consentirse.",n:""},
+  {art:"cami",g:4,a:{resultado:4,atencion:4,puntualidad:5,limpieza:5,espacio:4,precio:4},nps:9,v:0,c:"",n:"Laura"},
+  {art:"dani",g:3,a:{resultado:3,atencion:4,puntualidad:3,limpieza:4,espacio:3,precio:3},nps:6,v:1,c:"Me gustaría que hubiera más horarios en la tarde.",n:""},
+  {art:"vale",g:5,a:{resultado:5,atencion:5,puntualidad:4,limpieza:5,espacio:5,precio:4},nps:9,v:0,c:"",n:"Valentina"},
+  {art:"cami",g:5,a:{resultado:5,atencion:5,puntualidad:5,limpieza:5,espacio:5,precio:5},nps:10,v:0,c:"Quedé enamorada de mis cejas.",n:"Daniela"}
+];
+const E = {paso:0, tema:"navidad", art:null, serv:[], g:0, a:{}, nps:null, v:null, c:"", n:""};
+const T = {art:"todas", nuevo:null};
+const eScroll = $("#e-scroll"), ePant = $("#e-pantalla");
+const estrHTML = (campo,val) => `<div class="e-stars" role="radiogroup">${[1,2,3,4,5].map(i=>`<button type="button" class="${i<=val?"on":""}" data-e="estrella" data-campo="${campo}" data-v="${i}" aria-label="${i} de 5">★</button>`).join("")}</div>`;
+function eCab(titulo, texto){
+  return `<div class="e-cab"><svg class="e-gorro solo-navidad" viewBox="0 0 100 86" aria-hidden="true"><use href="#gorro"/></svg><svg class="e-arbol solo-navidad" viewBox="0 0 160 200" aria-hidden="true"><use href="#arbol"/></svg>
+    <div class="d-logo">TU SPA<small>Encuesta de satisfacción</small></div><h3 class="e-tit">${titulo}</h3>${texto?`<p class="d-txt">${texto}</p>`:""}</div>`;
+}
+function eVista(){
+  const nav = E.tema === "navidad";
+  if(E.paso === 0) return `${eCab(nav?"¿Cómo te sentiste esta Navidad?":"¿Cómo te sentiste?", nav?"Gracias por consentirte con nosotras esta temporada. Cuéntanos cómo te fue.":"Gracias por visitarnos. Tu opinión nos ayuda a mejorar cada día.")}
+    <div class="d-row" style="margin-top:12px"><span class="d-chip">3 pasos</span><span class="d-chip">Menos de 2 minutos</span></div>
+    <button class="d-principal" style="margin-top:14px" data-e="ir" data-p="1">Empezar encuesta ›</button>`;
+  const barraP = `<div class="d-top"><button class="d-volver" data-e="ir" data-p="${E.paso-1}">‹ Volver</button><span class="d-logo-mini">PASO ${Math.min(E.paso,3)} DE 3</span></div>`;
+  if(E.paso === 1) return `${barraP}<h4 class="d-h" style="margin-top:0">Tu cita de hoy</h4>
+    <div class="e-q"><h4>¿Quién te atendió?</h4><div class="d-chips">${ARTS.map(a=>`<button type="button" class="d-chip ${E.art===a.id?"sel":""}" data-e="art" data-id="${a.id}">${a.n}</button>`).join("")}</div></div>
+    <div class="e-q"><h4>¿Qué te realizaste?</h4><p>Puedes elegir varios</p><div class="d-chips">${E_SERV.map(x=>`<button type="button" class="d-chip ${E.serv.includes(x)?"sel":""}" data-e="serv" data-v="${x}">${x}</button>`).join("")}</div></div>
+    <label class="d-campo" for="e-nombre">Tu nombre (opcional)<input id="e-nombre" type="text" value="${esc(E.n)}" placeholder="Puedes dejarlo en blanco"></label>
+    <button class="d-principal" data-e="ir" data-p="2" ${E.art&&E.serv.length?"":"disabled"}>Continuar ›</button>`;
+  if(E.paso === 2) return `${barraP}<h4 class="d-h" style="margin-top:0">Califica tu experiencia</h4>
+    <div class="e-q"><h4>En general</h4><p>¿Qué tan satisfecha quedaste?</p>${estrHTML("g",E.g)}</div>
+    <div class="e-q"><h4>Cada detalle</h4>${E_ASP.map(([id,t])=>`<div class="e-asp"><span>${t}</span>${estrHTML("a."+id,E.a[id]||0)}</div>`).join("")}</div>
+    <button class="d-principal" data-e="ir" data-p="3" ${E.g&&E_ASP.every(([id])=>E.a[id])?"":"disabled"}>Continuar ›</button>`;
+  if(E.paso === 3) return `${barraP}<h4 class="d-h" style="margin-top:0">Para terminar</h4>
+    <div class="e-q"><h4>¿Nos recomendarías?</h4><p>0 es nada probable, 10 es totalmente</p><div class="e-nps">${[0,1,2,3,4,5,6,7,8,9,10].map(i=>`<button type="button" class="${E.nps===i?"sel":""}" data-e="nps" data-v="${i}">${i}</button>`).join("")}</div></div>
+    <div class="e-q"><h4>¿Volverías?</h4><div class="d-chips">${E_VOLV.map((x,i)=>`<button type="button" class="d-chip ${E.v===i?"sel":""}" data-e="volv" data-v="${i}">${x}</button>`).join("")}</div></div>
+    <div class="e-q"><h4>¿Qué fue lo que más te gustó?</h4><textarea id="e-com" class="e-area" rows="3" placeholder="Cuéntanos…">${esc(E.c)}</textarea></div>
+    <button class="d-principal" data-e="enviar" ${E.nps!=null&&E.v!=null?"":"disabled"}>Enviar mi encuesta</button>`;
+  return `<div class="e-gracias">${eCab(nav?"¡Gracias y feliz Navidad!":"¡Gracias por tu opinión!", "Leemos cada respuesta con mucho cariño.")}
+    <p class="d-nota" style="margin-top:14px;font-size:12px">Mira tu respuesta en la página de resultados →</p>
+    <button class="d-principal" data-e="otra">Responder otra vez</button></div>`;
+}
+function eRender(mantener){ const y = eScroll.scrollTop; eScroll.innerHTML = eVista(); eScroll.scrollTop = mantener ? y : 0; }
+document.querySelectorAll("[data-tema]").forEach(b=>b.addEventListener("click",()=>{
+  E.tema = b.dataset.tema; document.querySelectorAll("[data-tema]").forEach(x=>x.classList.toggle("on", x===b));
+  ePant.classList.toggle("navidad", E.tema==="navidad"); ePant.classList.toggle("marca", E.tema==="marca"); eRender(true);
+}));
+eScroll.addEventListener("click", e=>{
+  const b = e.target.closest("[data-e]"); if(!b) return; const k = b.dataset.e;
+  if(k === "ir"){ E.paso = Number(b.dataset.p); eRender(false); return; }
+  if(k === "art") E.art = b.dataset.id;
+  else if(k === "serv"){ const v = b.dataset.v; E.serv = E.serv.includes(v) ? E.serv.filter(x=>x!==v) : [...E.serv, v]; }
+  else if(k === "estrella"){ const c = b.dataset.campo, v = Number(b.dataset.v); if(c === "g") E.g = v; else E.a[c.slice(2)] = v; }
+  else if(k === "nps") E.nps = Number(b.dataset.v);
+  else if(k === "volv") E.v = Number(b.dataset.v);
+  else if(k === "enviar"){
+    const r = {art:E.art, g:E.g, a:{...E.a}, nps:E.nps, v:E.v, c:E.c.trim(), n:E.n.trim()};
+    RESP.push(r); T.nuevo = r; T.art = "todas"; E.paso = 4; eRender(false); tRender(); return;
+  }
+  else if(k === "otra"){ Object.assign(E,{paso:0,art:null,serv:[],g:0,a:{},nps:null,v:null,c:"",n:""}); eRender(false); return; }
+  eRender(true);
+});
+eScroll.addEventListener("input", e=>{ if(e.target.id==="e-nombre") E.n = e.target.value; if(e.target.id==="e-com") E.c = e.target.value; });
+
+const promedio = arr => arr.length ? arr.reduce((x,y)=>x+y,0)/arr.length : 0;
+const f1 = n => n.toFixed(1).replace(".",",");
+function tRender(){
+  const lista = RESP.filter(r=>T.art==="todas"||r.art===T.art);
+  const n = lista.length, g = promedio(lista.map(r=>r.g));
+  const pro = lista.filter(r=>r.nps>=9).length, det = lista.filter(r=>r.nps<=6).length;
+  const nps = n ? Math.round((pro-det)/n*100) : 0, volv = n ? Math.round(lista.filter(r=>r.v===0).length/n*100) : 0;
+  const tipo = x => x>=9?["","Promotora"]:x>=7?["neu","Neutral"]:["det","Detractora"];
+  const ult = lista.filter(r=>r.c).slice(-4).reverse();
+  $("#tablero").innerHTML = `
+    <div class="panel-head"><h3>Página privada de resultados</h3><span>${n} encuestas</span></div>
+    <p class="ayuda" style="font-size:14px;color:var(--tinta-2);margin:8px 0 4px">Solo tú y tu equipo la ven. Filtra por artista para reconocer a quien más enamora a tus clientas.</p>
+    <div class="p-fila" style="margin-top:10px">${[["todas","Todas"],...ARTS.map(a=>[a.id,a.n])].map(([id,t])=>`<button type="button" class="p-chip ${T.art===id?"on":""}" data-t="${id}">${t}</button>`).join("")}</div>
+    <div class="kpis">
+      <div class="kpi"><small>Satisfacción</small><b>${n?f1(g):"—"}</b><span>de 5 estrellas</span></div>
+      <div class="kpi"><small>Recomendación</small><b>${n?nps:"—"}</b><span>índice de −100 a 100</span></div>
+      <div class="kpi"><small>Volverían</small><b>${n?volv+"%":"—"}</b><span>dijeron “¡sí, segurísimo!”</span></div>
+      <div class="kpi"><small>Encuestas</small><b>${n}</b><span>respuestas recibidas</span></div>
+    </div>
+    <div class="p-lbl" style="margin-top:18px">Promedio por detalle (de 5)</div>
+    <div class="barras">${E_ASP.map(([id,t])=>{ const v = promedio(lista.map(r=>r.a[id])); return `<div class="barra"><span>${t}</span><span class="pista"><i style="width:${v/5*100}%"></i></span><em>${n?f1(v):"—"}</em></div>`;}).join("")}</div>
+    <div class="p-lbl" style="margin-top:18px">Últimos comentarios</div>
+    <div class="comentarios">${ult.length?ult.map(r=>{ const tp = tipo(r.nps); return `<div class="coment ${r===T.nuevo?"nuevo":""}"><div class="meta"><b>${esc(r.n||"Anónima")}</b><span>con ${art(r.art).n}</span><span class="estr">${"★".repeat(r.g)}</span><span class="tag ${tp[0]}">${tp[1]} · ${r.nps}/10</span>${r===T.nuevo?'<span class="tag">Tu respuesta</span>':""}</div>${esc(r.c)}</div>`;}).join(""):'<p class="d-nota" style="text-align:left">Aún no hay comentarios para esta artista.</p>'}</div>`;
+}
+$("#tablero").addEventListener("click", e=>{ const b = e.target.closest("[data-t]"); if(!b) return; T.art = b.dataset.t; tRender(); });
+eRender(false); tRender();
+
+/* ================== RUTAS ================== */
+function ruta(){
+  const enc = location.hash === "#encuesta" || location.hash === "#e-prueba";
+  $("#inicio").hidden = enc; $("#pag-encuesta").hidden = !enc;
+  if(location.hash === "#encuesta") window.scrollTo(0,0);
+  if(enc){ detener(); }
+  else if(location.hash.length > 1){ const t = document.getElementById(location.hash.slice(1)); if(t) requestAnimationFrame(()=>t.scrollIntoView()); }
+}
+window.addEventListener("hashchange", ruta); ruta();
+if(!reduce){
+  const n = document.createElement("div"); n.id = "nieve"; n.setAttribute("aria-hidden","true"); document.body.appendChild(n);
+  const sim = ["❄","✦","❅","✧","❆"];
+  for(let i=0;i<34;i++){ const c = document.createElement("span"); c.className = "copo"; c.textContent = sim[i % sim.length];
+    c.style.left = Math.random()*100 + "vw"; c.style.fontSize = (10 + Math.random()*14) + "px";
+    c.style.animationDuration = (10 + Math.random()*14) + "s"; c.style.animationDelay = (-Math.random()*24) + "s"; n.appendChild(c); }
+}
+if(!reduce && "IntersectionObserver" in window){
+  const io = new IntersectionObserver(ent=>{ if(ent.some(x=>x.isIntersecting)){ io.disconnect(); reproducir(); } }, {threshold:.4});
+  io.observe($("#telefono"));
+}
+</script>
+</body>
+</html>
