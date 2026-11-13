@@ -388,10 +388,6 @@ a.etiqueta:hover{background:var(--boton)}
 .escala{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px}
 .escala li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;border-radius:16px;background:rgba(255,255,255,.75);box-shadow:inset 0 0 0 1px #fff;font-size:15px;font-weight:600;color:var(--tinta-2)}
 .escala b{font-family:var(--f-display);font-size:18px;color:var(--tinta);font-variant-numeric:tabular-nums}
-.cupos{display:flex;gap:8px;margin:22px 0 8px}
-.cupos i{width:34px;height:34px;border-radius:50%;background:var(--holo);box-shadow:inset -4px -5px 8px rgba(110,69,217,.25),inset 3px 3px 6px #fff}
-.cupos i.tomado{background:#fff;box-shadow:inset 0 0 0 1.5px #d6cfe8}
-.cupos-txt{font-size:14px;font-weight:700;color:var(--tinta-2)}
 .precio .btn{margin-top:22px}
 .calc{border-radius:32px;padding:28px;background:var(--vidrio);backdrop-filter:blur(10px);box-shadow:inset 0 0 0 1px #fff,0 18px 40px rgba(29,24,48,.08);display:grid;gap:14px;align-content:start}
 .calc h3{font-family:var(--f-display);font-size:22px;font-weight:700}
@@ -516,9 +512,9 @@ footer b{font-family:var(--f-display);font-size:18px;color:var(--tinta);letter-s
       <p class="lead">Calendarios especiales de Navidad para tu spa o estética que se quedan contigo para siempre. Tus clientas eligen artista, día y hora desde su celular, y la solicitud te llega lista a WhatsApp.</p>
       <div class="hero-ctas">
         <a class="btn btn-osc" href="#demo">Probar la agenda</a>
-        <a class="btn btn-holo" href="#precio">Ver precio</a>
+        <a class="btn btn-holo" href="#incluye">Ver qué incluye</a>
       </div>
-      <div class="sello" id="sello"><em>Primeros 5</em> $250.000 · obsequio navideño</div>
+      <div class="sello"><em>Tuya para siempre</em> Navidad y todo el año</div>
     </div>
     <div class="hero-arte" aria-hidden="true">
       <svg viewBox="0 0 500 500">
@@ -590,7 +586,7 @@ footer b{font-family:var(--f-display);font-size:18px;color:var(--tinta);letter-s
           <span class="num">01 · SERVICIO ESTRELLA</span>
           <h3>Agenda navideña automática y personalizada</h3>
           <p>Una página de reservas con tu marca: catálogo, políticas, semanas, artistas, días y horas. Tus clientas eligen y te escriben por WhatsApp con todo listo. Incluye panel para tu equipo con clientas, horarios y artistas. Es tuya para siempre.</p>
-          <div class="precio-mini" id="precio-card"><b>$250.000</b><s>$550.000</s><span class="etiqueta">Primeros 5 cupos</span></div>
+          <div class="precio-mini"><span class="etiqueta">Tuya para siempre</span></div>
         </div>
         <svg viewBox="0 0 200 220" aria-hidden="true">
           <rect x="40" y="10" width="120" height="200" rx="26" fill="url(#cromo)" stroke="#8d87a6"/>
@@ -608,8 +604,7 @@ footer b{font-family:var(--f-display);font-size:18px;color:var(--tinta);letter-s
         <span class="num">02 · DURA TODO EL AÑO</span>
         <h3>Encuesta de satisfacción</h3>
         <p>Tus clientas califican su cita al salir y tú ves los resultados en una página privada. De regalo, estilo navideño hasta cuando quieras; en 2027, el estilo de tu marca.</p>
-        <div class="precio-mini" style="margin-top:12px"><b style="font-size:24px">$200.000</b></div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="etiqueta" href="#encuesta" style="text-decoration:none">Ver prototipo ›</a><a class="etiqueta clara cta-wa" data-servicio="Encuesta de satisfacción" href="#" target="_blank" rel="noopener">Cotiza por WhatsApp</a></div>
+                <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="etiqueta" href="#encuesta" style="text-decoration:none">Ver prototipo ›</a><a class="etiqueta clara cta-wa" data-servicio="Encuesta de satisfacción" href="#" target="_blank" rel="noopener">Cotiza por WhatsApp</a></div>
       </article>
       <article class="tarjeta">
         <svg class="ilus-mini" viewBox="0 0 120 120" aria-hidden="true"><circle cx="58" cy="62" r="30" fill="url(#perlaRosa)"/><path d="M84 30c12 10-4 22 8 32" stroke="url(#hg2)" stroke-width="8" fill="none" stroke-linecap="round"/></svg>
@@ -757,41 +752,6 @@ footer b{font-family:var(--f-display);font-size:18px;color:var(--tinta);letter-s
     </div>
   </section>
 
-  <!-- PRECIO -->
-  <section class="wrap sec" id="precio">
-    <div class="sec-head">
-      <p class="serif-caps">Lote de prueba</p>
-      <h2 class="h2">Precio especial para las primeras 5</h2>
-    </div>
-    <div class="precio-zona">
-      <article class="precio">
-        <p class="serif-caps">Agenda completa · tuya para siempre</p>
-        <h3 id="precio-titulo">Precio de obsequio navideño para las primeras 5</h3>
-        <div class="cifra holo-txt" id="precio-promo">$250.000</div>
-        <ul class="escala">
-          <li><span>Hasta el 30 de noviembre</span><b>$550.000</b></li>
-          <li><span>Desde el 1 de diciembre</span><b>$850.000</b></li>
-        </ul>
-        <div class="cupos" id="cupos" aria-hidden="true"></div>
-        <p class="cupos-txt" id="cupos-txt"></p>
-        <a class="btn btn-osc cta-wa" id="cta-precio" data-servicio="Agenda navideña" href="#" target="_blank" rel="noopener">Separar mi cupo por WhatsApp</a>
-      </article>
-      <article class="calc">
-        <h3>Tu agenda se paga con los abonos</h3>
-        <label for="abono">Valor del abono por cita <output id="abono-txt">$20.000</output></label>
-        <input id="abono" type="range" min="10000" max="50000" step="5000" value="20000">
-        <div class="calc-res">
-          <div class="n" id="calc-n">13</div>
-          <div>
-            <p id="calc-txt">Con abonos de $20.000, las primeras 13 clientas que abonen ya cubren tu agenda especial de $250.000.</p>
-            <div class="clientas" id="clientas" aria-hidden="true"></div>
-          </div>
-        </div>
-        <small id="calc-reg">A $550.000 serían 28 clientas, y desde el 1 de diciembre ($850.000), 43.</small>
-      </article>
-    </div>
-  </section>
-
   <!-- ENTREGABLES -->
   <section class="wrap sec" id="entregables">
     <div class="sec-head">
@@ -810,6 +770,38 @@ footer b{font-family:var(--f-display);font-size:18px;color:var(--tinta);letter-s
     </ol>
   </section>
 
+  <!-- PRECIO -->
+  <section class="wrap sec" id="precio">
+    <div class="sec-head">
+      <p class="serif-caps" id="oferta-ceja">Precio especial</p>
+      <h2 class="h2" id="oferta-titulo">Precio especial hasta el 30 de noviembre</h2>
+    </div>
+    <div class="precio-zona">
+      <article class="precio">
+        <p class="serif-caps">Agenda completa · tuya para siempre</p>
+        <h3 id="precio-titulo">Agenda completa · tuya para siempre</h3>
+        <div class="cifra holo-txt" id="precio-promo">$550.000</div>
+        <ul class="escala" id="escala">
+          <li id="esc-dic"><span>Desde el 1 de diciembre</span><b>$850.000</b></li>
+        </ul>
+        <a class="btn btn-osc cta-wa" id="cta-precio" data-servicio="Agenda navideña" href="#" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+      </article>
+      <article class="calc">
+        <h3>Tu agenda se paga con los abonos</h3>
+        <label for="abono">Valor del abono por cita <output id="abono-txt">$20.000</output></label>
+        <input id="abono" type="range" min="10000" max="50000" step="5000" value="20000">
+        <div class="calc-res">
+          <div class="n" id="calc-n">28</div>
+          <div>
+            <p id="calc-txt">Con abonos de $20.000, las primeras 13 clientas que abonen ya cubren tu agenda de $550.000.</p>
+            <div class="clientas" id="clientas" aria-hidden="true"></div>
+          </div>
+        </div>
+        <small>Los abonos son parte del pago de tus servicios: esta cuenta muestra cuántas reservas confirmadas equivalen a tu inversión.</small>
+      </article>
+    </div>
+  </section>
+
   <!-- CIERRE -->
   <section class="wrap">
     <div class="cierre">
@@ -818,7 +810,7 @@ footer b{font-family:var(--f-display);font-size:18px;color:var(--tinta);letter-s
       <p class="serif-caps">Redyz · Laboratorio estratégico &amp; creativo</p>
       <p class="firma">By <b>Marypaz Cadavid</b></p>
       <h2 class="h2">Que tu agenda trabaje mientras tú atiendes</h2>
-      <p id="cierre-txt">Escríbenos por WhatsApp y separa uno de los 5 cupos de obsequio navideño a $250.000.</p>
+      <p id="cierre-txt">Escríbenos por WhatsApp y aprovecha el precio especial hasta el 30 de noviembre.</p>
       <a class="btn btn-osc cta-wa" id="cta-final" data-servicio="Agenda navideña" href="#" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
     </div>
   </section>
@@ -924,16 +916,11 @@ footer b{font-family:var(--f-display);font-size:18px;color:var(--tinta);letter-s
 <script>
 /* ================== AJUSTES DE LA PROMO ================== */
 const REDYZ_WA = "573105085540";  // WhatsApp de Redyz
-const CUPOS_TOTALES = 5;
-// Contador: el lanzamiento empieza con 5 cupos y cada día se acaba uno.
-// 12 nov: 5 · 13 nov: 4 · 14 nov: 3 · 15 nov: 2 · 16 nov: 1 · desde el 17 nov: agotados.
-const INICIO_CUPOS = new Date(2026,10,12);
-const diasDesde = d => Math.floor((new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()) - d) / 86400000);
-const CUPOS_TOMADOS = Math.min(CUPOS_TOTALES, Math.max(0, diasDesde(INICIO_CUPOS)));
-const CUPOS_LIBRES = CUPOS_TOTALES - CUPOS_TOMADOS;
-const HAY_OBSEQUIO = CUPOS_LIBRES > 0;
-const PRECIO_PROMO = 250000, PRECIO_REGULAR = 550000, PRECIO_DIC = 850000;
-const precioActual = () => (new Date() < new Date(2026,11,1)) ? PRECIO_REGULAR : PRECIO_DIC;
+const PRECIO_ESPECIAL = 550000, PRECIO_DIC = 850000;
+// Precio especial de $550.000 hasta el 30 de noviembre; desde el 1 de diciembre, $850.000.
+const FIN_ESPECIAL = new Date(2026,11,1);
+const HAY_ESPECIAL = new Date() < FIN_ESPECIAL;
+const precioActual = () => HAY_ESPECIAL ? PRECIO_ESPECIAL : PRECIO_DIC;
 
 const $ = s => document.querySelector(s);
 const fmt = n => "$" + n.toLocaleString("es-CO");
@@ -941,7 +928,7 @@ const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function linkRedyz(servicio){
   let msg;
-  if(servicio.startsWith("Agenda")) msg = HAY_OBSEQUIO ? "¡Hola Redyz! 🎄 Quiero adquirir la Agenda navideña. ¿Todavía hay cupos de obsequio a $250.000?" : "¡Hola Redyz! 🎄 Quiero adquirir la Agenda navideña para mi negocio.";
+  if(servicio.startsWith("Agenda")) msg = HAY_ESPECIAL ? "¡Hola Redyz! 🎄 Quiero adquirir la Agenda navideña con el precio especial de noviembre." : "¡Hola Redyz! 🎄 Quiero adquirir la Agenda navideña para mi negocio.";
   else if(servicio.startsWith("Encuesta")) msg = "¡Hola Redyz! ✨ Quiero adquirir la Encuesta de satisfacción para mi negocio.";
   else if(servicio.startsWith("Calendario")) msg = "¡Hola Redyz! 🎄 Quiero que me avisen cuando estén disponibles los calendarios de adviento personalizables para mi marca.";
   else msg = "¡Hola Redyz! ✨ Quiero adquirir el " + servicio + ". ¿Me envían la cotización?";
@@ -949,31 +936,24 @@ function linkRedyz(servicio){
 }
 document.querySelectorAll(".cta-wa").forEach(a => a.href = linkRedyz(a.dataset.servicio));
 
-/* cupos */
-(function(){
-  const libres = CUPOS_LIBRES;
-  $("#cupos").innerHTML = Array.from({length:CUPOS_TOTALES},(_,i)=>`<i class="${i < CUPOS_TOMADOS ? "tomado" : ""}"></i>`).join("");
-  $("#cupos-txt").textContent = libres > 1 ? `Hoy quedan ${libres} de ${CUPOS_TOTALES} cupos a ${fmt(PRECIO_PROMO)} · cada día se acaba uno`
-    : libres === 1 ? `¡Último cupo a ${fmt(PRECIO_PROMO)}! Mañana se acaba el obsequio navideño`
-    : `Cupos de obsequio agotados. Precio actual: ${fmt(precioActual())}`;
-  if(libres === 0){
-    $("#precio-promo").textContent = fmt(precioActual());
-    $("#precio-titulo").textContent = "Los cupos de obsequio ya se agotaron";
-    $("#sello").innerHTML = `<em>Tuya para siempre</em> ${fmt(precioActual())}`;
-    $("#precio-card").innerHTML = `<b>${fmt(precioActual())}</b><span class="etiqueta">Tuya para siempre</span>`;
-    $("#cierre-txt").textContent = "Escríbenos por WhatsApp y empezamos tu agenda.";
-  }
-})();
+/* oferta vigente */
+if(!HAY_ESPECIAL){
+  $("#escala").hidden = true;
+  $("#precio-promo").textContent = fmt(PRECIO_DIC);
+  $("#oferta-ceja").textContent = "Inversión";
+  $("#oferta-titulo").textContent = "Tu agenda, tuya para siempre";
+  $("#precio-titulo").textContent = "Agenda completa con panel para tu equipo";
+  $("#cierre-txt").textContent = "Escríbenos por WhatsApp y empezamos tu agenda.";
+}
 
 /* calculadora de abonos */
 function calc(){
   const a = Number($("#abono").value);
-  const base = HAY_OBSEQUIO ? PRECIO_PROMO : precioActual();
-  const n = Math.ceil(base / a), nr = Math.ceil(PRECIO_REGULAR / a), nd = Math.ceil(PRECIO_DIC / a);
+  const base = precioActual();
+  const n = Math.ceil(base / a);
   $("#abono-txt").textContent = fmt(a);
   $("#calc-n").textContent = n;
-  $("#calc-txt").textContent = `Con abonos de ${fmt(a)}, las primeras ${n} clientas que abonen ya cubren tu agenda${HAY_OBSEQUIO ? " especial" : ""} de ${fmt(base)}.`;
-  $("#calc-reg").textContent = `A ${fmt(PRECIO_REGULAR)} serían ${nr} clientas, y desde el 1 de diciembre (${fmt(PRECIO_DIC)}), ${nd}.`;
+  $("#calc-txt").textContent = `Con abonos de ${fmt(a)}, las primeras ${n} clientas que abonen ya cubren tu agenda de ${fmt(base)}.`;
   $("#clientas").innerHTML = "<i></i>".repeat(n);
 }
 $("#abono").addEventListener("input", calc); calc();
