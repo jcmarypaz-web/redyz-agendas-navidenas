@@ -385,6 +385,24 @@ a.etiqueta:hover{background:var(--boton)}
 .precio .cifra.holo-txt{background:var(--holo-osc);-webkit-background-clip:text;background-clip:text}
 .precio .despues{font-size:16px;color:var(--tinta-2)}
 .precio .despues b{color:var(--tinta)}
+.col-der{display:grid;gap:18px;align-content:start}
+.precio-zona>.precio{align-self:start;position:sticky;top:20px}
+@media (max-width:980px){.precio-zona>.precio{position:static}}
+.citas-base{font-size:15px;color:var(--tinta-2);margin:0}
+.rango{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.rango div,.citas-grid div{background:#fff;border-radius:18px;padding:12px 14px;box-shadow:inset 0 0 0 1px var(--linea);display:grid;gap:2px}
+.rango span,.citas-grid span{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-2)}
+.rango b{font-family:var(--f-display);font-size:22px;font-variant-numeric:tabular-nums}
+.rango small{font-size:12px;color:var(--tinta-2)}
+.citas-ctrl{display:grid;gap:8px}
+.citas-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.citas-grid b{font-family:var(--f-display);font-size:24px;font-variant-numeric:tabular-nums}
+.citas-grid div:last-child{background:var(--holo);box-shadow:inset 0 0 0 1.5px #fff}
+.comparar{display:grid;gap:8px}
+.barra-c{height:14px;border-radius:14px;background:#EFEAF8;overflow:hidden}
+.barra-c i{display:block;height:100%;min-width:6px;border-radius:14px;background:var(--holo-osc)}
+.comparar p{margin:0;font-size:15px}
+@media (max-width:620px){ .citas-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
 .escala{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px}
 .escala li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;border-radius:16px;background:rgba(255,255,255,.75);box-shadow:inset 0 0 0 1px #fff;font-size:15px;font-weight:600;color:var(--tinta-2)}
 .escala b{font-family:var(--f-display);font-size:18px;color:var(--tinta);font-variant-numeric:tabular-nums}
@@ -393,7 +411,9 @@ a.etiqueta:hover{background:var(--boton)}
 .calc h3{font-family:var(--f-display);font-size:22px;font-weight:700}
 .calc label{font-weight:800;font-size:14px;display:flex;justify-content:space-between;gap:10px}
 .calc label output{font-family:var(--f-display);font-variant-numeric:tabular-nums}
-.calc input[type=range]{width:100%;accent-color:#6E45D9}
+.calc input[type=range]{width:100%;-webkit-appearance:none;appearance:none;height:10px;border-radius:10px;background:#EFEAF8;box-shadow:inset 0 0 0 1px #E6DEFA;outline-offset:4px}
+.calc input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:24px;height:24px;border-radius:50%;background:var(--holo);box-shadow:inset 0 0 0 2px #fff,0 0 0 1.5px #C9BEF0,0 4px 10px rgba(180,166,232,.35);cursor:pointer}
+.calc input[type=range]::-moz-range-thumb{width:24px;height:24px;border:0;border-radius:50%;background:var(--holo);box-shadow:inset 0 0 0 2px #fff,0 0 0 1.5px #C9BEF0;cursor:pointer}
 .calc-res{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;padding:16px;border-radius:22px;background:#fff;box-shadow:inset 0 0 0 1px var(--linea)}
 .calc-res .n{font-family:var(--f-display);font-weight:800;font-size:54px;line-height:1;font-variant-numeric:tabular-nums}
 .calc-res p{font-size:15px}
@@ -585,7 +605,7 @@ footer b{font-family:var(--f-display);font-size:18px;color:var(--tinta);letter-s
         <div>
           <span class="num">01 · SERVICIO ESTRELLA</span>
           <h3>Agenda navideña automática y personalizada</h3>
-          <p>Una página de reservas con tu marca: catálogo, políticas, semanas, artistas, días y horas. Tus clientas eligen y te escriben por WhatsApp con todo listo. Incluye panel para tu equipo con clientas, horarios y artistas. Es tuya para siempre.</p>
+          <p>Una página de reservas con tu marca: catálogo, políticas, semanas, artistas, días y horas. Tus clientas eligen y te escriben por WhatsApp con todo listo. Incluye panel para tu equipo con CRM de clientas, horarios y artistas. Es tuya para siempre.</p>
           <div class="precio-mini"><span class="etiqueta">Tuya para siempre</span></div>
         </div>
         <svg viewBox="0 0 200 220" aria-hidden="true">
@@ -671,8 +691,8 @@ footer b{font-family:var(--f-display);font-size:18px;color:var(--tinta);letter-s
       </article>
       <article class="inc">
         <svg viewBox="0 0 80 80" aria-hidden="true"><rect x="6" y="6" width="68" height="68" rx="22" fill="url(#hg)"/><circle cx="32" cy="32" r="9" fill="#fff" stroke="#5B4F7E" stroke-width="2.5"/><path d="M18 56c2-9 8-13 14-13s12 4 14 13" fill="none" stroke="#5B4F7E" stroke-width="2.5" stroke-linecap="round"/><path d="M50 30h14M50 40h14M50 50h10" stroke="#5B4F7E" stroke-width="2.5" stroke-linecap="round"/></svg>
-        <h3>Clientas con su historial</h3>
-        <p>Cada reserva queda guardada en la ficha de la clienta: celular, cumpleaños, notas y todos sus procedimientos.</p>
+        <h3>CRM de clientas</h3>
+        <p>Cada reserva queda en la ficha de la clienta: celular, cumpleaños, notas y todos sus procedimientos. Así le haces seguimiento, sabes cuándo volver a escribirle y la atiendes como a una clienta frecuente.</p>
       </article>
       <article class="inc">
         <svg viewBox="0 0 80 80" aria-hidden="true"><rect x="6" y="6" width="68" height="68" rx="22" fill="url(#hg2)"/><circle cx="28" cy="34" r="9" fill="url(#perlaRosa)" stroke="#5B4F7E" stroke-width="2.5"/><circle cx="52" cy="34" r="9" fill="url(#perla)" stroke="#5B4F7E" stroke-width="2.5"/><path d="M16 58c1-7 6-11 12-11s11 4 12 11M40 58c1-7 6-11 12-11s11 4 12 11" fill="none" stroke="#5B4F7E" stroke-width="2.5" stroke-linecap="round"/></svg>
@@ -762,7 +782,7 @@ footer b{font-family:var(--f-display);font-size:18px;color:var(--tinta);letter-s
       <li><i>1</i><div><b>Página de reservas</b><span>Con catálogo, políticas, semanas, artistas, días y horas.</span></div></li>
       <li><i>2</i><div><b>Mensaje automático a WhatsApp</b><span>Nombre de la clienta, artista, día y hora en un solo mensaje.</span></div></li>
       <li><i>3</i><div><b>Panel privado para tu equipo</b><span>Agenda por semana, clientas, horarios, artistas y ajustes de la portada.</span></div></li>
-      <li><i>4</i><div><b>Clientas con historial</b><span>Ficha de cada clienta con sus datos y procedimientos.</span></div></li>
+      <li><i>4</i><div><b>CRM de clientas</b><span>Ficha de cada clienta con sus datos, procedimientos y seguimiento.</span></div></li>
       <li><i>5</i><div><b>Personalización de marca</b><span>Logo, colores y tipografías de tu negocio.</span></div></li>
       <li><i>6</i><div><b>Fotos navideñas editadas</b><span>De tus artistas, tu equipo o tu spa.</span></div></li>
       <li><i>7</i><div><b>Tuya para siempre</b><span>Navideña en temporada y con el estilo de tu marca el resto del año.</span></div></li>
@@ -778,13 +798,38 @@ footer b{font-family:var(--f-display);font-size:18px;color:var(--tinta);letter-s
     </div>
     <div class="precio-zona">
       <article class="precio">
-        <p class="serif-caps">Agenda completa · tuya para siempre</p>
+        <p class="serif-caps">Agenda navideña</p>
         <h3 id="precio-titulo">Agenda completa · tuya para siempre</h3>
         <div class="cifra holo-txt" id="precio-promo">$550.000</div>
         <ul class="escala" id="escala">
           <li id="esc-dic"><span>Desde el 1 de diciembre</span><b>$850.000</b></li>
         </ul>
         <a class="btn btn-osc cta-wa" id="cta-precio" data-servicio="Agenda navideña" href="#" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+      </article>
+      <div class="col-der">
+      <article class="calc citas" id="citas">
+        <h3>¿Cuántas citas puede agendar tu equipo?</h3>
+        <p class="citas-base">Una artista agenda entre 3 y 8 citas al día. Trabajando 6 días a la semana y 4 semanas al mes, eso es:</p>
+        <div class="rango">
+          <div><span>Al mes</span><b>72 a 192</b><small>citas por artista</small></div>
+          <div><span>Al año</span><b>864 a 2.304</b><small>citas por artista</small></div>
+        </div>
+        <div class="citas-ctrl">
+          <label for="c-dia">Citas al día por artista <output id="c-dia-txt">5</output></label>
+          <input id="c-dia" type="range" min="3" max="8" step="1" value="5">
+          <label for="c-art">Artistas en tu equipo <output id="c-art-txt">1</output></label>
+          <input id="c-art" type="range" min="1" max="8" step="1" value="1">
+        </div>
+        <div class="citas-grid">
+          <div><span>Al día</span><b id="c-d">5</b></div>
+          <div><span>A la semana</span><b id="c-s">30</b></div>
+          <div><span>Al mes</span><b id="c-m">120</b></div>
+          <div><span>Al año</span><b id="c-a">1.440</b></div>
+        </div>
+        <div class="comparar">
+          <div class="barra-c" aria-hidden="true"><i id="c-barra"></i></div>
+          <p id="c-txt">Tu agenda se paga con 28 citas abonadas. En un año puedes agendar 1.440: es apenas el 1,9%, y lo cubres en menos de 6 días de trabajo.</p>
+        </div>
       </article>
       <article class="calc">
         <h3>Tu agenda se paga con los abonos</h3>
@@ -799,6 +844,7 @@ footer b{font-family:var(--f-display);font-size:18px;color:var(--tinta);letter-s
         </div>
         <small>Los abonos son parte del pago de tus servicios: esta cuenta muestra cuántas reservas confirmadas equivalen a tu inversión.</small>
       </article>
+      </div>
     </div>
   </section>
 
@@ -956,7 +1002,21 @@ function calc(){
   $("#calc-txt").textContent = `Con abonos de ${fmt(a)}, las primeras ${n} clientas que abonen ya cubren tu agenda de ${fmt(base)}.`;
   $("#clientas").innerHTML = "<i></i>".repeat(n);
 }
-$("#abono").addEventListener("input", calc); calc();
+$("#abono").addEventListener("input", ()=>{ calc(); citasCalc(); }); calc();
+
+/* citas que puede agendar el equipo */
+const num = n => n.toLocaleString("es-CO");
+function citasCalc(){
+  const dia = Number($("#c-dia").value), arts = Number($("#c-art").value);
+  const d = dia*arts, sem = d*6, mes = sem*4, anio = mes*12;
+  $("#c-dia-txt").textContent = dia; $("#c-art-txt").textContent = arts;
+  $("#c-d").textContent = num(d); $("#c-s").textContent = num(sem); $("#c-m").textContent = num(mes); $("#c-a").textContent = num(anio);
+  const necesarias = Math.ceil(precioActual() / Number($("#abono").value));
+  const pct = necesarias / anio * 100, dias = Math.ceil(necesarias / d);
+  $("#c-barra").style.width = Math.min(100, pct) + "%";
+  $("#c-txt").textContent = `Tu agenda se paga con ${num(necesarias)} citas abonadas. En un año ${arts > 1 ? "tu equipo puede" : "puedes"} agendar ${num(anio)}: es apenas el ${pct.toLocaleString("es-CO",{maximumFractionDigits:1})}%, y lo cubres en ${dias} ${dias === 1 ? "día" : "días"} de trabajo.`;
+}
+$("#c-dia").addEventListener("input", citasCalc); $("#c-art").addEventListener("input", citasCalc); citasCalc();
 
 /* ================== DEMO: DATOS DE EJEMPLO ================== */
 const DIAS_C = ["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"];
